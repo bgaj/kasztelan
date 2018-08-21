@@ -50,7 +50,7 @@ class Header extends React.Component {
                                     <Col sm={6} className="header__skew header__skew--right">
                                         <ul className="header__list header__list--right">
                                             <li>
-                                                <a>Rozgrywki</a>
+                                                <Link to='/terminarz'>Rozgrywki</Link>
                                             </li>
                                             <li>
                                                 <a>Sponsorzy</a>

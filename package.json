@@ -8,6 +8,8 @@
     "axios": "^0.18.0",
     "babel-preset-react": "^6.24.1",
     "file-loader": "^1.1.11",
+    "lodash.isempty": "^4.4.0",
+    "lodash.orderby": "^4.6.0",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",

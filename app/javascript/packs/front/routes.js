@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Header from "./containers/Header";
 import Home from "./pages/Home";
 import News from "./pages/News";
+import TablePage from "./pages/TablePage";
+import Schedule from "./pages/Schedule";
 import SingleNews from "./pages/SingleNews";
 import Sponsors from "./containers/Sponsors";
 import Footer from "./containers/Footer";
@@ -15,6 +17,8 @@ class App extends Component {
                     <Header/>
                     <Switch>
                         <Route exact path='/' component={Home} />
+                        <Route exact path='/tabela' component={TablePage} />
+                        <Route exact path='/terminarz' component={Schedule} />
                         <Route exact path='/aktualnosci' component={News} />
                         <Route path='/aktualnosci/:slug' component={SingleNews} />
                     </Switch>

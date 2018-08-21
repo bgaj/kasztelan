@@ -57,7 +57,7 @@ class Sidebar extends React.Component {
                                     </span>
                     </div>
                 </a>
-                <a className='social social__green'>
+                <Link to='/terminarz' className='social social__green'>
                     <div className="social__icon social__icon--green">f</div>
                     <div className="social__text">
                         Sprawdź terminarz
@@ -65,8 +65,8 @@ class Sidebar extends React.Component {
                                         <Glyphicon glyph='plus' />
                                     </span>
                     </div>
-                </a>
-                <a className='social social__black'>
+                </Link>
+                <Link to='/tabela' className='social social__black'>
                     <div className="social__icon social__icon--black">f</div>
                     <div className="social__text">
                         Sprawdź tabelę
@@ -74,7 +74,7 @@ class Sidebar extends React.Component {
                                         <Glyphicon glyph='plus' />
                                     </span>
                     </div>
-                </a>
+                </Link>
             </React.Fragment>
         );
     }

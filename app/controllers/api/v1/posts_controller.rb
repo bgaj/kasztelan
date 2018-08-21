@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    posts = Post.page(params[:page]).per(5).default_order
+    posts = Post.page(params[:page]).per(5).default_order.with_attached_thumbnail
     render jsonapi: posts, links: pagination(posts)
   end
 

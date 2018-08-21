@@ -14,8 +14,17 @@ class Api {
     loadPosts(params) {
         return this.api.get("posts", {params: params});
     }
+
     loadPost(id) {
         return this.api.get(`posts/${id}`);
+    }
+
+    loadSeason() {
+        return this.api.get(`current_season`);
+    }
+
+    loadSchedule() {
+        return this.api.get('schedule');
     }
 }
 

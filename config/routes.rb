@@ -8,6 +8,8 @@ Rails.application.routes.draw do
           get :home
         end
       end
+      get :current_season, to: 'matches#current_season'
+      get :schedule, to: 'matches#schedule'
     end
   end
   get '*path', to: 'home#index', format: false, constraints: lambda { |request| !(request.path =~ /rails/) }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_134100) do
+ActiveRecord::Schema.define(version: 2018_08_19_152812) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,28 @@ ActiveRecord::Schema.define(version: 2018_08_18_134100) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "match_types", force: :cascade do |t|
+    t.string "name"
+    t.string "full_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.date "match_date"
+    t.time "match_time"
+    t.string "result"
+    t.integer "home_id"
+    t.integer "guest_id"
+    t.integer "match_type_id"
+    t.integer "round"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_matches_on_guest_id"
+    t.index ["home_id"], name: "index_matches_on_home_id"
+    t.index ["match_type_id"], name: "index_matches_on_match_type_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "slug"
     t.string "title"
@@ -52,6 +74,13 @@ ActiveRecord::Schema.define(version: 2018_08_18_134100) do
     t.string "meta_description"
     t.text "content"
     t.boolean "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.boolean "my_team", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
