@@ -42,11 +42,11 @@ a{
     position: relative;
     img{
       position: absolute;
-      top: 20px;
+      top: 0px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 100;
-      max-width: 150px;
+      max-width: 130px;
     }
   }
   &__menu{
@@ -455,7 +455,7 @@ a{
 
   &__logo{
     img{
-      max-width: 200px;
+      max-width: 150px;
     }
   }
   &__info{
@@ -588,6 +588,7 @@ h1{
 .single_news{
   margin-top: 40px;
   &__box{
+    margin-bottom: 15px;
     background: white;
     border: 1px solid $border;
     border-radius: 4px;
@@ -602,6 +603,9 @@ h1{
       font-size: 36px;
       font-weight: bold;
       margin: 10px 0;
+      @media (max-width: 480px) {
+        font-size: 24px;
+      }
     }
     h4{
       font-size: 14px;
@@ -770,5 +774,12 @@ h1{
       width: 100%;
       text-align: center;
     }
+  }
+}
+.loader{
+  text-align: center;
+  padding: 50px;
+  img{
+    max-width: 200px;
   }
 }

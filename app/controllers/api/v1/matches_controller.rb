@@ -13,6 +13,18 @@ class Api::V1::MatchesController < ApplicationController
     render jsonapi: Match.team_matches(team).includes(:home, :guest)
   end
 
+  def next_match
+    team = Team.my_team
+    next_match = Match.team_matches(team).where(result: nil).order(match_date: :asc).first
+    render jsonapi: next_match
+  end
+
+  def prev_match
+    team = Team.my_team
+    prev_match = Match.team_matches(team).where.not(result: nil).order(match_date: :asc).first
+    render jsonapi: prev_match
+  end
+
   private
 
   def set_match_type

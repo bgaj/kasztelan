@@ -4,6 +4,8 @@ import { Link, Redirect } from 'react-router-dom';
 import Sidebar from "../containers/Sidebar";
 import Moment from 'react-moment';
 import api from "../api";
+import Loader from "../components/Loader";
+import {Helmet} from "react-helmet";
 
 class News extends React.Component {
 
@@ -24,6 +26,8 @@ class News extends React.Component {
         const slug = this.props.match.params.slug
         if(slug != props.match.params.slug && !this.state.fetching){
             this.loadData(slug)
+            const element = document.getElementById("single_news");
+            element.scrollIntoView({behavior: "instant", block: "start"});
         }
     }
 
@@ -44,23 +48,29 @@ class News extends React.Component {
             return <Redirect to='/aktualnosci' />
         }
         if(!post) return null
-        const { content, image, date, title, other_posts } = post.attributes
+        const { content, image, date, title, other_posts,meta_description } = post.attributes
         const sidebar_posts = other_posts.data
         return (
             <React.Fragment>
-               <div className="single_news" >
+                <Helmet>
+                    <title>{title} - Kasztelan Rozprza</title>
+                    <meta name="description" content={meta_description} />
+                </Helmet>
+               <div id="single_news" className="single_news" >
                    <Grid>
                        <Col sm={8}>
-                            <div className="single_news__box">
-                                <img className="single_news__image" src={image}/>
-                                <div className="single_news__content">
-                                    <h1>
-                                        {title}
-                                    </h1>
-                                    <span className="article__time article__time--big"><Glyphicon glyph={'time'}/> Utworzono: <Moment date={date} format="LL" /></span>
-                                    <p dangerouslySetInnerHTML={{__html: content}}></p>
-                                </div>
-                            </div>
+                           {fetching ? <Loader/>  :
+                               <div className="single_news__box">
+                                   <img className="single_news__image" src={image}/>
+                                   <div className="single_news__content">
+                                       <h1>
+                                           {title}
+                                       </h1>
+                                       <span className="article__time article__time--big"><Glyphicon glyph={'time'}/> Utworzono: <Moment date={date} format="LL" /></span>
+                                       <p dangerouslySetInnerHTML={{__html: content}}></p>
+                                   </div>
+                               </div>
+                           }
                        </Col>
                        <Col sm={4}>
                            <div className='box'>

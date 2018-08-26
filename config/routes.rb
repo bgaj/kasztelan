@@ -10,8 +10,18 @@ Rails.application.routes.draw do
       end
       get :current_season, to: 'matches#current_season'
       get :schedule, to: 'matches#schedule'
+      get :next_match, to: 'matches#next_match'
+      get :prev_match, to: 'matches#prev_match'
     end
   end
+
+  devise_for :users, path: 'admin', controllers: { sessions: 'admin/sessions' }
+
+  namespace :admin do
+    root to: 'posts#index', as: :root
+    resources :posts, except: [:show]
+  end
+
   get '*path', to: 'home#index', format: false, constraints: lambda { |request| !(request.path =~ /rails/) }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

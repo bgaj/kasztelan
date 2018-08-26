@@ -1,5 +1,6 @@
 import React from "react";
 import {Grid, Col, Row, Glyphicon} from 'react-bootstrap';
+import Logo from 'images/logo/negatywny.png'
 
 class Footer extends React.Component {
     render() {
@@ -7,8 +8,8 @@ class Footer extends React.Component {
             <React.Fragment>
                 <div className="footer">
                     <Grid>
-                        <Col sm={5} className="footer__logo">
-                            <img src="http://azsczestochowa.pl/wp-content/uploads/2018/01/AZS_LOGO-kopia_white_png.png"/>
+                        <Col sm={4} className="footer__logo">
+                            <img src={Logo}/>
                         </Col>
                         <Col sm={2} className="footer__info">
                             <h4>Sprawdź</h4>
@@ -27,7 +28,7 @@ class Footer extends React.Component {
                                 <a>Kontakt</a><br/>
                             </div>
                         </Col>
-                        <Col sm={3} className="footer__info">
+                        <Col sm={4} className="footer__info">
                             <h4>Dane kontaktowe</h4>
                             <div className="footer__text">
                                 ul. Sportowa 12 A <br/>

@@ -1,54 +1,18 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import {Glyphicon} from 'react-bootstrap';
-
+import {connect} from "react-redux";
+import MatchBox from '../components/MatchBox'
 
 class Sidebar extends React.Component {
     render() {
+        const { next, prev} = this.props
         return (
             <React.Fragment>
-                <div className='box'>
-                    <div className='box__title'>
-                        <h4>Następny mecz</h4>
-                    </div>
-                    <div className='match'>
-                        <div className='match__title'>II Liga 2018/2019</div>
-                        <div className='match__date'>05/05/2018 - 18:00</div>
-                        <div className='match__details'>
-                            <div className='match__team'>
-                                <img src="https://kasztelanrozprza.pl/wp-content/uploads/2017/09/logo1.png" />
-                                <span>LUMKS Kasztelan Rozprza</span>
-                            </div>
-                            <div className='match__score'>3:2</div>
-                            <div className='match__team'>
-                                <img src="http://kasztelanrozprza.pl/wp-content/uploads/2017/10/ulks1-150x150.png" />
-                                <span> MOSIR Sieradz</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='box'>
-                    <div className='box__title'>
-                        <h4>Poprzedni mecz</h4>
-                    </div>
-                    <div className='match'>
-                        <div className='match__title'>II Liga 2018/2019</div>
-                        <div className='match__date'>05/05/2018 - 18:00</div>
-                        <div className='match__details'>
-                            <div className='match__team'>
-                                <img src="https://kasztelanrozprza.pl/wp-content/uploads/2017/09/logo1.png" />
-                                <span>LUMKS Kasztelan Rozprza</span>
-                            </div>
-                            <div className='match__score'>3:2</div>
-                            <div className='match__team'>
-                                <img src="https://kasztelanrozprza.pl/wp-content/uploads/2017/09/lechia-150x150.png" />
-                                <span>KS LECHIA II TOMASZÓW MAZOWIECKI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {next.data && <MatchBox title="Następny mecz" match={next.data.attributes}/>}
+                {prev.data && <MatchBox title="Poprzedni mecz" match={prev.data.attributes}/>}
 
-                <a className='social social__facebook'>
+                <a className='social social__facebook' href="https://www.facebook.com/kasztelanrozprza" target="_blank">
                     <div className="social__icon social__icon--facebook">f</div>
                     <div className="social__text">
                         Polub nasz profil
@@ -79,4 +43,10 @@ class Sidebar extends React.Component {
         );
     }
 }
-export default Sidebar;
+export default connect(
+    state => ({
+        prev: state.prev,
+        next: state.next
+    }),
+    {}
+)(Sidebar)

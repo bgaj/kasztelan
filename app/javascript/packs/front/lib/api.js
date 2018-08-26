@@ -26,6 +26,12 @@ class Api {
     loadSchedule() {
         return this.api.get('schedule');
     }
+    loadNextMatch() {
+        return this.api.get('next_match');
+    }
+    loadPrevMatch() {
+        return this.api.get('prev_match');
+    }
 }
 
 export default Api

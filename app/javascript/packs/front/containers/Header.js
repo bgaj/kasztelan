@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import {Grid, Col, Row, Glyphicon} from 'react-bootstrap';
 import Drawer from '@material-ui/core/Drawer';
+import Logo from 'images/logo/kasztelan9.png'
 import Responsive from 'react-responsive';
 
 const Desktop = props => <Responsive {...props} minWidth={992} />;
@@ -20,7 +21,6 @@ class Header extends React.Component {
     };
     render() {
         const { drawer } = this.state
-        console.log(drawer)
         return (
             <React.Fragment>
                 {/* Material App Bar */}
@@ -28,7 +28,7 @@ class Header extends React.Component {
                     <Desktop>
                         <div className="header__logo">
                             <Link to='/'>
-                                <img src="http://azsczestochowa.pl/wp-content/uploads/2018/01/azs_logo.png"/>
+                                <img src={Logo}/>
                             </Link>
                         </div>
                         <div style={{background: '#292c31'}}>
@@ -69,7 +69,7 @@ class Header extends React.Component {
                             <div className="mobile_header">
                                 <Glyphicon onClick={this.toggleDrawer(true)} glyph={'menu-hamburger'} />
                                 <Link to='/'>
-                                    <img src="http://azsczestochowa.pl/wp-content/uploads/2018/01/azs_logo.png"/>
+                                    <img src={Logo}/>
                                 </Link>
                                 <span></span>
                             </div>
@@ -84,7 +84,7 @@ class Header extends React.Component {
                             >
                                 <div className="drawer__top">
                                     <Link to='/'>
-                                        <img src="http://azsczestochowa.pl/wp-content/uploads/2018/01/azs_logo.png"/>
+                                        <img src={Logo}/>
                                     </Link>
                                 </div>
                                 <ul>
@@ -98,7 +98,7 @@ class Header extends React.Component {
                                         <a>Klub</a>
                                     </li>
                                     <li>
-                                        <a>Rozgrywki</a>
+                                        <Link to='/terminarz'>Rozgrywki</Link>
                                     </li>
                                     <li>
                                         <a>Sponsorzy</a>

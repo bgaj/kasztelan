@@ -27,7 +27,6 @@ class News extends React.Component {
     componentDidUpdate(props){
         const { location } = this.props;
         if(JSON.stringify(location) !== JSON.stringify(props.location) && !this.state.fetching){
-            console.log('sss')
             let params = new URLSearchParams(location.search);
             const page = params.get('page') ? parseInt(params.get('page'),10) : 1
             this.setState({initialPage: page - 1})
