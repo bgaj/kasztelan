@@ -117,8 +117,10 @@ class TablePage extends React.Component {
                                                     return(
                                                         <tr key={row.id}>
                                                             <td>
-                                                                <img src={team.logo}/>
-                                                                {team.name}
+                                                                <div>
+                                                                    <span className='table-logo'><img src={team.logo}/></span>
+                                                                    <span className='table-name'>{team.name}</span>
+                                                                </div>
                                                             </td>
                                                             <td>
                                                                 {row.points}

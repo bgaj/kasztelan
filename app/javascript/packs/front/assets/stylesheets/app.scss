@@ -843,3 +843,30 @@ h1{
     max-width: 200px;
   }
 }
+.table{
+  tbody{
+    font-size: 10px;
+    text-transform: uppercase;
+    tr{
+      td{
+        vertical-align: middle;
+      }
+      td:first-child{
+        font-weight: bold;
+        .table-logo{
+          width: 70px;
+          text-align: center;
+          display: inline-block;
+        }
+        .table-name{
+          white-space: nowrap;
+          padding-left: 5px;
+        }
+        img{
+          width: auto;
+          max-height: 40px;
+        }
+      }
+    }
+  }
+}
