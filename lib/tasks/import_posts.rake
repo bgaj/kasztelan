@@ -7,7 +7,7 @@ namespace :import_posts do
     CSV.foreach('./lib/posts.csv', headers: true) do |row|
       date = Date.today
       date = Date.new(row["Date"][0..3].to_i, row["Date"][4..5].to_i, row["Date"][6..7].to_i ) if row["Date"].size == 8
-      image = row["Image URL"].split("|")[0] if row["Image URL"]
+      image = row["Image URL"].split("|")[0].gsub(/http:\/\//, 'https://') if row["Image URL"]
       image_name = image.split('/').last if image
       a = Post.create!(
               title: row['Title'],
