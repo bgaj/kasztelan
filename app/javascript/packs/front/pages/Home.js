@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import {Grid, Col, Row} from 'react-bootstrap';
-import MyImage from 'images/kids.png'
 import api from '../api'
 import Sidebar from "../containers/Sidebar";
 import {Helmet} from "react-helmet";
+import { img_url } from '../lib/helper'
 
 class Home extends React.Component {
 
@@ -26,6 +26,7 @@ class Home extends React.Component {
             dots: true,
             arrows: false,
             infinite: true,
+            adaptiveHeight: true,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1
@@ -44,10 +45,10 @@ class Home extends React.Component {
                                     <Slider {...settings}>
                                         {posts.map( post => {
                                             const { image, slug, title } = post.attributes
-                                            const src = image ? image : 'https://kasztelanrozprza.pl/wp-content/uploads/2018/01/DSC_2768.jpg'
                                             return(
                                                <div key={post.id} className="slider__element">
-                                                   <img src={src} />
+                                                   <Link to={`aktualnosci/${slug}`}>
+                                                   <img src={img_url(image)} />
                                                    <div className='slider__overlay'>
                                                        <div className='slider__info'>
                                                            <p>Aktualności</p>
@@ -55,14 +56,11 @@ class Home extends React.Component {
                                                            <Link to={`aktualnosci/${slug}`}>Czytaj więcej</Link>
                                                        </div>
                                                    </div>
+                                                   </Link>
                                                </div>
                                             )
                                         })}
                                     </Slider>
-                                </div>
-                                <div className="kids" style={{backgroundImage: `url(${MyImage})`}}>
-                                    <h2>Zapraszamy na treningi mini siatkówki</h2>
-                                    <a>Zobacz więcej</a>
                                 </div>
                             </Col>
                             <Col xs={12} sm={4}>

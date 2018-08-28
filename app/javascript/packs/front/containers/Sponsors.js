@@ -1,31 +1,30 @@
 import React from "react";
 import {Grid, Col, Row, Glyphicon} from 'react-bootstrap';
 import Energo from 'images/sponsors/energopik_logo.png'
-import Gmina from 'images/sponsors/gmina.png'
+import San from 'images/sponsors/san.jpg'
+import RolBud from 'images/sponsors/rolbud1.jpg'
+import Gimnazjum from 'images/sponsors/gimnazjum.jpg'
+import Dobry from 'images/sponsors/dobry_klimat.jpg'
+import Gmina from 'images/sponsors/gmina.jpg'
 import Wizja from 'images/sponsors/wizja_reklamy.png'
-import Ball from 'images/background.png'
+import Background from 'images/sponsors/green.jpg'
 
 class Sponsors extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="sponsors">
+                <div className="sponsors" style={{backgroundImage: `url(${Background})`}}>
                     <Grid>
                         <h3>Sponsorzy</h3>
                         <div className='sponsors__container'>
                             <div className='sponsors__box'>
                                 <a>
-                                    <img src={Energo}/>
+                                    <img src={San}/>
                                 </a>
                             </div>
                             <div className='sponsors__box'>
                                 <a>
-                                    <img src={Gmina}/>
-                                </a>
-                            </div>
-                            <div className='sponsors__box'>
-                                <a>
-                                    <img src={Wizja}/>
+                                    <img src={Gimnazjum}/>
                                 </a>
                             </div>
                             <div className='sponsors__box'>
@@ -35,12 +34,32 @@ class Sponsors extends React.Component {
                             </div>
                             <div className='sponsors__box'>
                                 <a>
-                                    <img src={Gmina}/>
+                                    <img src={Dobry}/>
                                 </a>
                             </div>
                             <div className='sponsors__box'>
                                 <a>
                                     <img src={Wizja}/>
+                                </a>
+                            </div>
+                            <div className='sponsors__box'>
+                                <a>
+                                    <img src={Gmina}/>
+                                </a>
+                            </div>
+                            <div className='sponsors__box'>
+                                <a>
+                                    <img src={RolBud}/>
+                                </a>
+                            </div>
+                            <div className='sponsors__box'>
+                                <a>
+                                    <img src={Wizja}/>
+                                </a>
+                            </div>
+                            <div className='sponsors__box'>
+                                <a>
+                                    <img src={San}/>
                                 </a>
                             </div>
                             <div className='sponsors__box'>
@@ -50,17 +69,12 @@ class Sponsors extends React.Component {
                             </div>
                             <div className='sponsors__box'>
                                 <a>
-                                    <img src={Gmina}/>
+                                    <img src={Gimnazjum}/>
                                 </a>
                             </div>
                             <div className='sponsors__box'>
                                 <a>
-                                    <img src={Wizja}/>
-                                </a>
-                            </div>
-                            <div className='sponsors__box'>
-                                <a>
-                                    <img src={Energo}/>
+                                    <img src={Dobry}/>
                                 </a>
                             </div>
                             <div className='sponsors__box'>
@@ -70,7 +84,7 @@ class Sponsors extends React.Component {
                             </div>
                             <div className='sponsors__box'>
                                 <a>
-                                    <img src={Wizja}/>
+                                    <img src={RolBud}/>
                                 </a>
                             </div>
                         </div>

@@ -3,20 +3,50 @@ namespace :season_data do
   desc 'create application task rates'
   task :teams => :environment do
     teams=[
-        'SMS PZPS Spała II',
-        'Eco-Team AZS IV LO Częstochowa',
-        'LUKS Wilki Wilczyn',
-        'Tubądzin Volley MOSiR Sieradz',
-        'WKRĘT-MET LKPS Borowno',
-        'LUMKS Kasztelan Rozprza',
-        'SPS Konspol Słupca',
-        'MKS Bzura Ozorków',
-        'LKS Czarni Rząśnia',
-        'PGE Skra II Bełchatów'
+        {
+            team: 'SMS PZPS Spała II',
+            logo: 'sms.jpg'
+        },
+        {
+            team: 'Eco-Team AZS IV LO Częstochowa',
+            logo: 'czestochowa.jpg'
+        },
+        {
+            team: 'LUKS Wilki Wilczyn',
+            logo: 'wilczyn.jpg'
+        },
+        {
+            team: 'Tubądzin Volley MOSiR Sieradz',
+            logo: 'sieradz_logo.jpg'
+        },
+        {
+            team: 'WKRĘT-MET LKPS Borowno',
+            logo: 'borowno.jpeg'
+        },
+        {
+            team: 'LUMKS Kasztelan Rozprza',
+            logo: 'kasztelan.png'
+        },
+        {
+            team: 'SPS Konspol Słupca',
+            logo: 'slupca.jpeg'
+        },
+        {
+            team: 'MKS Bzura Ozorków',
+            logo: 'bzura.jpeg'
+        },
+        {
+            team: 'LKS Czarni Rząśnia',
+            logo: 'rzasnia.jpg'
+        },
+        {
+            team: 'PGE Skra II Bełchatów',
+            logo: 'skra.png'
+        }
     ]
     teams.each do |t|
-      t = Team.create!( name:t, my_team: t == 'LUMKS Kasztelan Rozprza' )
-      t.logo.attach io: open(File.open(Rails.root.join('public', 'skra.png'))), filename: 'logo.png'
+      o = Team.create!( name: t[:team], my_team: t[:team] == 'LUMKS Kasztelan Rozprza' )
+      o.logo.attach io: open(File.open(Rails.root.join('public', t[:logo]))), filename: t[:logo]
     end
   end
 

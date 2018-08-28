@@ -6,6 +6,7 @@ import ReactPaginate from 'react-paginate';
 import api from "../api";
 import Moment from 'react-moment';
 import {Helmet} from "react-helmet";
+import { img_url } from '../lib/helper'
 
 class News extends React.Component {
 
@@ -53,8 +54,7 @@ class News extends React.Component {
             search: params.toString()
         });
         this.loadData({page: data.selected + 1})
-        const element = document.getElementById("articles");
-        element.scrollIntoView({behavior: "instant", block: "start"});
+        window.scrollTo(0, 0)
     }
 
     render() {
@@ -76,7 +76,7 @@ class News extends React.Component {
                                         <Link to={`/aktualnosci/${slug}`}>
                                             <Row className="article__box">
                                                 <Col md={5}>
-                                                    <img src={image}/>
+                                                    <img src={img_url(image)}/>
                                                 </Col>
                                                 <Col md={7}>
                                                     <div className='article__text'>

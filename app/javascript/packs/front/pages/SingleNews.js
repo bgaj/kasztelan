@@ -6,6 +6,7 @@ import Moment from 'react-moment';
 import api from "../api";
 import Loader from "../components/Loader";
 import {Helmet} from "react-helmet";
+import { img_url } from '../lib/helper'
 
 class News extends React.Component {
 
@@ -26,8 +27,7 @@ class News extends React.Component {
         const slug = this.props.match.params.slug
         if(slug != props.match.params.slug && !this.state.fetching){
             this.loadData(slug)
-            const element = document.getElementById("single_news");
-            element.scrollIntoView({behavior: "instant", block: "start"});
+            window.scrollTo(0, 0)
         }
     }
 
@@ -52,16 +52,23 @@ class News extends React.Component {
         const sidebar_posts = other_posts.data
         return (
             <React.Fragment>
-                <Helmet>
-                    <title>{title} - Kasztelan Rozprza</title>
-                    <meta name="description" content={meta_description} />
-                </Helmet>
                <div id="single_news" className="single_news" >
                    <Grid>
                        <Col sm={8}>
                            {fetching ? <Loader/>  :
                                <div className="single_news__box">
-                                   <img className="single_news__image" src={image}/>
+                                   <Helmet>
+                                       <title>{title} - Kasztelan Rozprza</title>
+                                       <meta name="description" content={meta_description} />
+                                       <meta property="og:locale" content="pl_PL"/>
+                                       <meta property="og:type" content="article"/>
+                                       <meta property="og:title" content={title}/>
+                                       <meta property="og:description" content={meta_description}/>
+                                       <meta property="og:url" content={window.location.href}/>
+                                       <meta property="og:site_name" content="Kasztelan Rozprza"/>
+                                       <meta property="og:image" content={`${window.location.origin}${img_url(image)}`}/>
+                                   </Helmet>
+                                   <img className="single_news__image" src={img_url(image)}/>
                                    <div className="single_news__content">
                                        <h1>
                                            {title}
