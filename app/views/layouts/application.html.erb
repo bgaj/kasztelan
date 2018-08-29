@@ -3,7 +3,6 @@
   <head>
     <title>Kasztelan Rozprza</title>
     <%= csrf_meta_tags %>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application' %>
@@ -15,7 +14,11 @@
     <meta name="msapplication-TileImage" content="<%= asset_path 'favicon/ms-icon-144x144.png'%>">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= content_for :head if content_for?(:head) %>
+    <% content_for :default_head do %>
+      <%= render 'shared/default_head' %>
+    <% end %>
+    <%= content_for?(:head) ? content_for(:head) : content_for(:default_head)  %>
+    <%= render 'shared/favicon' %>
   </head>
 
   <body>
