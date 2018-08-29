@@ -1,0 +1,7 @@
+- if @post
+  - content_for :head do
+    %meta{:content => @post.title, :property => "og:title"}/
+    %meta{:content => @post.meta_description, :property =>"og:description"}/
+    %meta{:content => (request.url), :property => "og:url"}/
+    %meta{:content => @post.thumbnail.attached? ? url_for(@post.thumbnail) : image_url('placeholder.jpg'), :property => "og:image"}
+#root

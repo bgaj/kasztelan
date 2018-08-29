@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :posts, except: [:show]
   end
 
+  get 'aktualnosci/:id', to: 'home#news'
   get '*path', to: 'home#index', format: false, constraints: lambda { |request| !(request.path =~ /rails/) }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
