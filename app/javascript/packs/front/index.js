@@ -4,6 +4,7 @@ import Routes from './routes';
 import 'moment/locale/pl';
 import { Provider } from 'react-redux'
 import store from './store'
+import 'babel-polyfill'
 
 document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(

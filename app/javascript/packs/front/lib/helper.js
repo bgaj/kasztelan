@@ -1,4 +1,4 @@
-import Background from 'images/placeholder.jpg'
+import Background from 'images/placeholder1.jpg'
 
 export const img_url = (img) => {
     if(img){

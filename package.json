@@ -6,6 +6,7 @@
     "@material-ui/icons": "^2.0.2",
     "@rails/webpacker": "^3.3.1",
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "file-loader": "^1.1.11",
     "lodash.isempty": "^4.4.0",
