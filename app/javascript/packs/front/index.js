@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 import { Provider } from 'react-redux'
 import store from './store'
 import 'babel-polyfill'
+import 'url-search-params-polyfill';
 
 document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(

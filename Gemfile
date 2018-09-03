@@ -30,6 +30,10 @@ gem 'kaminari'
 gem 'friendly_id', '~> 5.2.0'
 gem 'mini_magick'
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
+gem 'simple_form'
+gem 'file_validators'
+gem 'tinymce-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

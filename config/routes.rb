@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'posts#index', as: :root
     resources :posts, except: [:show]
+    resources :images
   end
 
   get 'aktualnosci/:id', to: 'home#news'

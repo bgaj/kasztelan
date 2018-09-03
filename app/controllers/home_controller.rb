@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   end
 
   def news
-    @post = Post.find_by(slug: params[:id])
+    @post = Post.published.find_by(slug: params[:id])
   end
 end

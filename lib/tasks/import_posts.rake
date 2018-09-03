@@ -8,7 +8,8 @@ namespace :import_posts do
       date = Date.today
       date = Date.new(row["Date"][0..3].to_i, row["Date"][4..5].to_i, row["Date"][6..7].to_i ) if row["Date"].size == 8
       image = row["Image URL"].split("|")[0].gsub(/http:\/\//, 'https://') if row["Image URL"]
-      image_name = image.split('/').last if image
+      image_object = nil
+      image_object = Image.create! remote_image_url: image if image
       a = Post.create!(
               title: row['Title'],
               content: row['Content'],
@@ -16,9 +17,17 @@ namespace :import_posts do
               slug: row['Slug'],
               lead: row['Krótki opis'],
               published: row['Status'] != 'draft' ? true : false,
-              created_at: date
+              created_at: date,
+              image: image_object
       )
-      a.thumbnail.attach io: open(image), filename: image_name if image
+    end
+  end
+
+  task :post_images => :environment do
+    require 'csv'
+    CSV.foreach('./lib/posts.csv', headers: true) do |row|
+      image = row["Image URL"].split("|")[0].gsub(/http:\/\//, 'https://') if row["Image URL"]
+      Image.create! remote_image_url: image if image
     end
   end
 end

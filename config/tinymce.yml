@@ -1,0 +1,22 @@
+default:
+  menubar: false
+  paste_merge_formats: true
+  extended_valid_elements: 'span'
+  paste_retain_style_properties: all
+  toolbar:
+    - formatselect | fontselect | fontsizeselect | bold | italic | underline | strikethrough | alignleft | aligncenter | alignjustify | alignright
+    - bullist | numlist | outdent | indent | blockquote | forecolor | backcolor | undo | redo | link | unlink | preview | hr | searchreplace | code |
+  plugins:
+    - code
+    - link
+    - paste
+    - importcss
+    - autolink
+    - lists
+    - wordcount
+    - colorpicker
+    - hr
+    - preview
+    - searchreplace
+    - textcolor
+  browser_spellcheck : true

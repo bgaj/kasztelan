@@ -27,7 +27,12 @@ class Home extends React.Component {
             arrows: false,
             infinite: true,
             adaptiveHeight: true,
+            draggable: false,
             speed: 500,
+            fade: true,
+            autoplay: true,
+            speed: 1000,
+            autoplaySpeed: 5000,
             slidesToShow: 1,
             slidesToScroll: 1
         };

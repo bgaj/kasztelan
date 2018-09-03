@@ -1,1 +1,17 @@
-= link_to 'Wyloguj się', destroy_user_session_path, method: :delete
+.uk-flex.uk-flex-middle
+  %h2.uk-margin-remove-bottom.uk-margin-large-right Posty
+  = link_to 'Nowy wpis', new_admin_post_path, class: 'uk-button uk-button-primary'
+= paginate @posts
+.uk-table-responsive
+  %table.uk-table.table.uk-table-striped.uk-table-divider
+    %thead
+      %tr
+        %th
+          Tytuł
+        %th
+          Dodany
+        %th
+          Status
+    %tbody
+      =render @posts
+= paginate @posts

@@ -1,0 +1,25 @@
+= simple_form_for [:admin, @post] do |f|
+  .uk-grid
+    .uk-width-3-4
+      .form-field
+        = f.input :title, label: 'Tytuł'
+      .form-field
+        = f.input :slug, label: 'Slug'
+      .form-field
+        = f.input :meta_description, label: 'Seo opis'
+      .form-field
+        = f.label :content, 'Treść'
+        = react_component("Media")
+        = f.input :content, label: false , input_html: {:class => "tinymce", :rows => 40, :cols => 120}
+        = tinymce
+    .uk-width-1-4
+      = f.label :published, "Status"
+      = f.input :published, as: :radio_buttons, collection: [['Opublikowany',true], ['Szkic', false] ], label: false
+      = f.association :image, as: :hidden
+      .form-field
+        %label Zdjęcie główne
+        = react_component("MediaTop")
+        %img{src: @post.image ? @post.image.image.thumb.url : asset_path('placeholder1.jpg'), id: 'image_insert' }
+
+  .uk-margin-top
+    = f.submit "Zapisz", class: 'uk-button uk-button-primary'

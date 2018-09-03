@@ -13,10 +13,10 @@ class SerializablePost < JSONAPI::Serializable::Resource
   end
 
   attribute :image do
-    @url_helpers.url_for @object.thumbnail.variant(resize: '800x800') if @object.thumbnail.attached?
+   @object.image.image_url if @object.image
   end
 
   attribute :image_small do
-    @url_helpers.url_for @object.thumbnail.variant(resize: '200x200') if @object.thumbnail.attached?
+    @object.image.image.thumb.url if @object.image
   end
 end

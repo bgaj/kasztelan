@@ -1,0 +1,129 @@
+@import "uikit";
+$black: #1e2024;
+$green: #61a545;
+$border: #e4e7ed;
+
+a{
+  color: white;
+}
+.top{
+  background: $black;
+  color: white;
+}
+.sidebar{
+  background: $black;
+  color: white;
+}
+.main{
+  background: #edeff4;
+  padding: 15px;
+}
+
+.table{
+  background: white;
+  color: $black;
+  thead{
+    th{
+      padding: 8px 15px;
+      font-size: 12px;
+      color: $black;
+      font-weight: bold;
+    }
+  }
+  tbody{
+    font-size: 14px;
+    td{
+      padding: 15px;
+    }
+  }
+  a{
+    color: #0073aa;
+    font-weight: bold;
+    &:hover,&:focus{
+      color: #00a0d2;
+      text-decoration: none;
+    }
+  }
+  .published{
+    color: $green;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .draft{
+    color: $black;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .time{
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .title{
+    max-width: 300px;
+  }
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  span{
+    background: white;
+    display: inline-block;
+    margin: 2px;
+    border: 1px solid $border;
+    a{
+      padding: 2px 7px;
+      font-size: 12px;
+      font-weight: bold;
+      color: $black;
+      display: block;
+    }
+  }
+  .current,.gap{
+    background: transparent;
+    border-color: transparent;
+  }
+}
+
+
+input:not([type=radio]){
+  border: 1px solid $border;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-field{
+  margin-bottom: 15px;
+}
+.images{
+  padding: 15px;
+  &__box{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border: 2px solid transparent;
+    &:hover{
+      cursor: pointer;
+    }
+    &.active{
+      border-color: blue;
+    }
+    img{
+      width: 100%;
+    }
+  }
+}
+.selected{
+  img{
+    display: block;
+  }
+  .select{
+    label{
+      display: block;
+    }
+  }
+}

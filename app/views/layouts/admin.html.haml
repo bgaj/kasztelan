@@ -13,5 +13,16 @@
     %link{:href => "//fonts.googleapis.com/css?family=Roboto:400,700,300", :rel => "stylesheet", :type => "text/css"}/
     = stylesheet_link_tag 'admin'
     = javascript_include_tag 'admin'
+    = javascript_pack_tag 'application'
+
   %body{class: 'animsition'}
-    = yield
+    .uk-grid.uk-grid-collapse
+      .uk-width-1-1.top
+        = link_to 'Wyloguj się', destroy_user_session_path, method: :delete
+      .uk-width-1-6.sidebar
+        %ul
+          %li
+            = link_to 'Wpisy', admin_posts_path
+      .uk-width-5-6
+        .main
+          = yield
