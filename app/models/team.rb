@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  has_one_attached :logo
+  belongs_to :image
 
   def self.my_team
     where(my_team: true).first

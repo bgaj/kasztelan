@@ -43,7 +43,7 @@ class Header extends React.Component {
                                                 <Link to='/aktualnosci'>Kadra</Link>
                                             </li>
                                             <li>
-                                                <a>Klub</a>
+                                                <Link to='/klub'>Klub</Link>
                                             </li>
                                         </ul>
                                     </Col>
@@ -95,7 +95,7 @@ class Header extends React.Component {
                                         <Link to='/aktualnosci'>Kadra</Link>
                                     </li>
                                     <li>
-                                        <a>Klub</a>
+                                        <Link to='/klub'>Klub</Link>
                                     </li>
                                     <li>
                                         <Link to='/terminarz'>Rozgrywki</Link>

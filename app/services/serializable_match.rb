@@ -12,7 +12,7 @@ class SerializableMatch < JSONAPI::Serializable::Resource
   end
 
   attribute :home_logo do
-    @url_helpers.url_for @object.home.logo.variant(resize: '150x150')
+    @object.home.image.image.small_thumb.url
   end
 
   attribute :guest do
@@ -20,6 +20,6 @@ class SerializableMatch < JSONAPI::Serializable::Resource
   end
 
   attribute :guest_logo do
-    @url_helpers.url_for @object.guest.logo.variant(resize: '150x150')
+    @object.guest.image.image.small_thumb.url
   end
 end

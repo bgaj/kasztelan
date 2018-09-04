@@ -67,9 +67,11 @@ ActiveRecord::Schema.define(version: 2018_08_31_222004) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
+    t.integer "image_id"
     t.boolean "my_team", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_teams_on_image_id"
   end
 
   create_table "users", force: :cascade do |t|

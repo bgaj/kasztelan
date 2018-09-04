@@ -1,5 +1,6 @@
 import React from "react";
-import {Grid, Col, Row, Glyphicon} from 'react-bootstrap';
+import {Grid} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Logo from 'images/logo/negatywny.png'
 
 class Footer extends React.Component {
@@ -15,15 +16,15 @@ class Footer extends React.Component {
                             <div className="footer__info">
                                 <h4>Sprawdź</h4>
                                 <div className="footer__text">
-                                    <a>Aktualności</a><br/>
-                                    <a>Terminarz</a><br/>
-                                    <a>Rozgrywki</a><br/>
+                                    <Link to="/aktualnosci">Aktualności</Link><br/>
+                                    <Link to="/terminarz">Terminarz</Link><br/>
+                                    <Link to="/tabela">Tabele</Link><br/>
                                 </div>
                             </div>
                             <div className="footer__info">
                                 <h4>Poznaj nas</h4>
                                 <div className="footer__text">
-                                    <a>Klub</a><br/>
+                                    <Link to='/klub'>Klub</Link><br/>
                                     <a>Sponsorzy</a><br/>
                                     <a>Kadra</a><br/>
                                     <a>Kontakt</a><br/>

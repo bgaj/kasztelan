@@ -45,8 +45,10 @@ namespace :season_data do
         }
     ]
     teams.each do |t|
-      o = Team.create!( name: t[:team], my_team: t[:team] == 'LUMKS Kasztelan Rozprza' )
-      o.logo.attach io: open(File.open(Rails.root.join('public', t[:logo]))), filename: t[:logo]
+      image = Image.new
+      image.image = Rails.root.join('public', t[:logo]).open
+      image.save!
+      o = Team.create!( name: t[:team], my_team: t[:team] == 'LUMKS Kasztelan Rozprza', image: image )
     end
   end
 

@@ -6,7 +6,7 @@ class SerializableMatchType < JSONAPI::Serializable::Resource
 
   attribute :teams do
     Team.where(id: @object.matches.map(&:home_id)+@object.matches.map(&:guest_id)).map do |team|
-      logo =  @url_helpers.url_for team.logo.variant(resize: '150x150')
+      logo =  team.image.image.small_thumb.url
         {name: team.name,
          logo: logo,
         id: team.id}
