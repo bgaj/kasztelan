@@ -34,6 +34,15 @@ gem 'carrierwave', '~> 1.0'
 gem 'simple_form'
 gem 'file_validators'
 gem 'tinymce-rails'
+gem 'haml-rails', '~> 1.0'
+gem 'virtus'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# React JS gems
+gem 'webpacker'
+gem 'react-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -46,13 +55,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 2.13'Gem
   gem 'selenium-webdriver'
-  gem 'will_paginate', '~> 3.1.0'
-  gem 'mini_magick'
-  gem 'virtus'
-  gem 'devise'
-  gem 'haml-rails', '~> 1.0'
 end
 
 group :development do
@@ -64,9 +68,4 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# React JS gems
-gem 'webpacker'
-gem 'react-rails'
