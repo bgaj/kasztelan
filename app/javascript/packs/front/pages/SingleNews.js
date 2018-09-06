@@ -18,9 +18,14 @@ class News extends React.Component {
     }
 
     componentDidMount(){
-        const { match } = this.props;
+        const { match, location } = this.props;
         const { slug } = match.params;
-        this.loadData(slug)
+        let params = new URLSearchParams(location.search);
+        const data = {}
+        if(params.get('uuid')){
+            data.uuid = params.get('uuid')
+        }
+        this.loadData(slug, data)
     }
 
     componentDidUpdate(props){
@@ -31,10 +36,10 @@ class News extends React.Component {
         }
     }
 
-    loadData = (slug) => {
+    loadData = (slug, data) => {
         let self = this
         this.setState({fetching: true})
-        api.loadPost(slug).then( resp => {
+        api.loadPost(slug, data).then( resp => {
             self.setState({post: resp.data.data, fetching: false})
         }).catch(e => {
             self.setState({fetching: false})

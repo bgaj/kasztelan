@@ -16,6 +16,7 @@ class Admin::PostsController < Admin::AdminController
   def create
     @post = Post.new(post_params)
     @post.published = false
+    @post.uuid = SecureRandom.uuid
     if @post.save
       redirect_to admin_posts_path
     else

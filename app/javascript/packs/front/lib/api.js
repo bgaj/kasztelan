@@ -15,8 +15,8 @@ class Api {
         return this.api.get("posts", {params: params});
     }
 
-    loadPost(id) {
-        return this.api.get(`posts/${id}`);
+    loadPost(id, params) {
+        return this.api.get(`posts/${id}`, {params: params});
     }
 
     loadSeason() {

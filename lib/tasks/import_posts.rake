@@ -23,6 +23,13 @@ namespace :import_posts do
     end
   end
 
+  task :generate_secure => :environment do
+    Post.all.each do |p|
+      p.uuid = SecureRandom.uuid
+      p.save!
+    end
+  end
+
   task :post_images => :environment do
     require 'csv'
     CSV.foreach('./lib/posts.csv', headers: true) do |row|

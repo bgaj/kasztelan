@@ -21,7 +21,12 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.friendly.find(params[:id])
+    if params[:uuid]
+      @post = Post.find(params[:id])
+      json_response({ message: 'not_found' }, :not_found) if @post.uuid != params[:uuid]
+    else
+      @post = Post.published.friendly.find(params[:id])
+    end
   end
 
   def pagination(t)
