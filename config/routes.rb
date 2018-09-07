@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'posts#index', as: :root
-    resources :posts, except: [:show]
+    resources :posts, except: [:show] do
+      member do
+        get :top_post
+      end
+    end
     resources :images
   end
 

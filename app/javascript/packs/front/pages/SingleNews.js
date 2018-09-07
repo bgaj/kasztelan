@@ -7,6 +7,8 @@ import api from "../api";
 import Loader from "../components/Loader";
 import {Helmet} from "react-helmet";
 import { img_url } from '../lib/helper'
+import { FacebookShareButton } from 'react-share'
+import Facebook from 'images/facebook-logo.svg'
 
 class News extends React.Component {
 
@@ -80,6 +82,17 @@ class News extends React.Component {
                                        </h1>
                                        <span className="article__time article__time--big"><Glyphicon glyph={'time'}/> Utworzono: <Moment date={date} format="LL" /></span>
                                        <p dangerouslySetInnerHTML={{__html: content}}></p>
+                                       <FacebookShareButton url={window.location.href}>
+                                           <div className='social social__facebook' style={{maxWidth: '300px'}}>
+                                               <div className="social__icon social__icon--facebook"><img src={Facebook}/></div>
+                                               <div className="social__text">
+                                                   Udostępnij
+                                                   <span className='circle'>
+                                                        <Glyphicon glyph='plus' />
+                                                    </span>
+                                               </div>
+                                           </div>
+                                       </FacebookShareButton>
                                    </div>
                                </div>
                            }

@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::AdminController
 
-  before_action :set_post, only: [:edit, :update, :destroy, :autosave]
+  before_action :set_post, only: [:edit, :update, :destroy, :autosave, :top_post]
 
   def index
     @posts = Post.page(params[:page]).per(15).ordered
@@ -24,11 +24,28 @@ class Admin::PostsController < Admin::AdminController
     end
   end
 
+  def top_post
+    Post.all.update_all(top_post: false)
+    @post.top_post = !@post.top_post
+    if @post.save
+      redirect_to admin_posts_path
+    end
+
+  end
+
   def update
     if @post.update(post_params)
-      redirect_to admin_posts_path
+      redirect_to edit_admin_post_path @post
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to admin_posts_path
+    else
+      flash[:error]="Coś poszło nie tak"
     end
   end
 

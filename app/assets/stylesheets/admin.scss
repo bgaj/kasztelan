@@ -127,3 +127,20 @@ input:not([type=radio]){
     }
   }
 }
+
+.main{
+  a{
+    color: $black;
+  }
+}
+.preview{
+ a{
+   padding: 15px 0;
+   font-size: 18px;
+   font-weight: bold;
+ }
+  span{
+    font-size: 12px;
+    color: $green;
+  }
+}

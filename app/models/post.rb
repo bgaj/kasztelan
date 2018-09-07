@@ -5,8 +5,9 @@ class Post < ApplicationRecord
 
   belongs_to :image, optional: true
 
-  scope :home_page, -> (limit){ where(published: true).order(created_at: :desc).limit(limit || 3)}
   scope :ordered, -> { order(created_at: :desc)}
+  scope :top_post_order, -> { order(top_post: :desc)}
+  scope :home_page, -> (limit){ where(published: true).top_post_order.ordered.limit(limit || 3)}
   scope :published, -> { where(published: true)}
 
   validates :meta_description, length: { maximum: 255 }

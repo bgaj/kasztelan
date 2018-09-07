@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_06_162348) do
+ActiveRecord::Schema.define(version: 2018_09_06_194341) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_09_06_162348) do
     t.datetime "updated_at", null: false
     t.integer "image_id"
     t.string "uuid"
+    t.boolean "top_post"
     t.index ["image_id"], name: "index_posts_on_image_id"
   end
 

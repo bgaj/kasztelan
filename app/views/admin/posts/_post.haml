@@ -1,7 +1,10 @@
-%tr
+%tr{style: post.top_post ? 'background: yellow' : ''}
   %td.title
     = link_to post.title, edit_admin_post_path(post)
   %td.time
     = l(post.created_at, format: '%d %B %Y')
   %td
     = post_status post
+  %td
+    =link_to "Usuń", admin_post_path(post), method: :delete
+    =link_to post.top_post ? "Odepnij" : "Przypnij", top_post_admin_post_path(post)
