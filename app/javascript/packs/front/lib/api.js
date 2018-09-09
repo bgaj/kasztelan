@@ -3,7 +3,8 @@ import axios from 'axios'
 class Api {
     constructor() {
         this.api = axios.create({
-            baseURL: '/api/v1/'
+            baseURL: '/api/v1/',
+            headers: {'X-CSRF-Token': document.querySelector("meta[name='csrf-token']").getAttribute("content")}
         });
     }
 
@@ -31,6 +32,9 @@ class Api {
     }
     loadPrevMatch() {
         return this.api.get('prev_match');
+    }
+    contactForm(params) {
+        return this.api.post('contact_form', params)
     }
 }
 

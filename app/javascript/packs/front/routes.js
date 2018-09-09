@@ -7,6 +7,7 @@ import Schedule from "./pages/Schedule";
 import Layout from "./components/Layout"
 import SingleNews from "./pages/SingleNews";
 import Club from "./pages/Club";
+import Contact from "./pages/Contact";
 import {connect} from "react-redux";
 import { loadPrevMatch } from "./actions/prev_match";
 import { loadNextMatch } from './actions/next_match'
@@ -30,6 +31,7 @@ class App extends Component {
                                 <Route exact path='/tabela' component={TablePage} />
                                 <Route exact path='/terminarz' component={Schedule} />
                                 <Route exact path='/klub' component={Club} />
+                                <Route exact path='/kontakt' component={Contact} />
                                 <Route exact path='/aktualnosci' component={News} />
                                 <Route path='/aktualnosci/:slug' component={SingleNews} />
                             </Switch>

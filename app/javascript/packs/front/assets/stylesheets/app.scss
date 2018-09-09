@@ -673,6 +673,9 @@ h1{
       max-width: 100%;
       height: auto;
     }
+    a{
+      color: $green;
+    }
   }
 }
 .sidebar-article{
@@ -866,6 +869,135 @@ h1{
           width: auto;
           max-height: 40px;
         }
+      }
+    }
+  }
+}
+.club{
+  h2{
+    margin: 0;
+    text-align: left;
+    font-size: 32px;
+  }
+  &__logo{
+    max-width: 70px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    float: right;
+  }
+  &__content{
+    padding: 15px 20px;
+    color: $black;
+    font-size: 14px;
+  }
+  &__success{
+    margin: 15px;
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      width: 5px;
+      height: 100%;
+      background: #61a545;
+      position: absolute;
+      left: -15px;
+      border-radius: 0px 4px 4px 0px;
+      top: 0;
+    }
+  }
+  &__medal{
+    display: inline-block;
+    max-width: 80px;
+    text-align: center;
+    padding-left: 20px;
+    img{
+      max-width: 40px;
+      &.gold{
+        max-width: 45px;
+      }
+      &.brown{
+        max-width: 35px;
+      }
+    }
+    span{
+      font-size: 16px;
+      font-weight: bold;
+      display: block;
+    }
+  }
+  &__name{
+    font-size: 16px;
+    span{
+      font-weight: bold;
+    }
+  }
+}
+.contact{
+  &__title{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 ;
+  }
+  &__error{
+    font-size: 10px;
+    color: red;
+  }
+  &__ok{
+    margin: 70px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__form{
+    margin: 25px;
+    > div > div{
+      margin-bottom: 15px;
+    }
+    label{
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      display: block;
+    }
+    input, textarea{
+      width: 100%;
+      appearance: none;
+      padding: 10px 10px;
+      font-size: 15px;
+      color: #31404b;
+      background-color: #fff;
+      border: 1px solid #e4e7ed;
+      border-radius: 2px;
+      box-shadow: none;
+      transition: border-color ease-in-out 0.15s;
+      &::placeholder{
+        color:rgba(154, 157, 162, 0.6)
+      }
+    }
+    textarea{
+      resize: none;
+    }
+    button{
+      display: block;
+      margin-top: 20px;
+      border-radius: 4px;
+      color: white;
+      background: $green;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        background: darken($green, 10%);
+      }
+      &:disabled{
+        cursor: not-allowed;
+        background: $green;
       }
     }
   }

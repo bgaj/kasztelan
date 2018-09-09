@@ -56,7 +56,7 @@ class Header extends React.Component {
                                                 <a>Sponsorzy</a>
                                             </li>
                                             <li>
-                                                <a>Kontakt</a>
+                                                <Link to='/kontakt'>Kontakt</Link>
                                             </li>
                                         </ul>
                                     </Col>
@@ -104,7 +104,7 @@ class Header extends React.Component {
                                         <a>Sponsorzy</a>
                                     </li>
                                     <li>
-                                        <a>Kontakt</a>
+                                        <Link to='/kontakt'>Kontakt</Link>
                                     </li>
                                 </ul>
                             </div>

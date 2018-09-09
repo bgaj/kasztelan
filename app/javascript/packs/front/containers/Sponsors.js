@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid, Col, Row, Glyphicon} from 'react-bootstrap';
+import {Grid} from 'react-bootstrap';
 import Energo from 'images/sponsors/energopik_logo.png'
 import San from 'images/sponsors/san.jpg'
 import RolBud from 'images/sponsors/rolbud1.jpg'

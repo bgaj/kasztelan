@@ -8,6 +8,7 @@ Rails.application.routes.draw do
           get :home
         end
       end
+      post :contact_form, to: 'contact_form#create'
       get :current_season, to: 'matches#current_season'
       get :schedule, to: 'matches#schedule'
       get :next_match, to: 'matches#next_match'
