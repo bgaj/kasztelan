@@ -28,27 +28,9 @@ class Club extends React.Component {
                                     </div>
                                     <div className="club__content">
                                         <img className="club__logo" src={Logo} />
-                                        <p>Ludowy Uczniowski Międzyszkolny
-                                            Klub Sportowy Kasztelan Rozprza
-                                            został założony 1 stycznia 2007
-                                            roku. Jego powstanie było
-                                            odpowiedzią na stale rosnące
-                                            zainteresowanie siatkówką halową
-                                            w naszym regionie. </p>
-                                        <p>Celem klubu była aktywizacja młodych ludzi, możliwość
-                                            rozwijania swoich pasji oraz reprezentacji rozpierskich barw w
-                                            rozgrywkach III ligi mężczyzn na arenie wojewódzkiej.</p>
-                                        <p>
-                                            Praca z młodzieżą, dobra organizacja klubu oraz wsparcie
-                                            lokalnej społeczności przyczyniły się do tego, że Kasztelan
-                                            Rozprza od 10 lat na stałe zadomowił się na siatkarskiej mapie
-                                            regionu łódzkiego. Na bogatą historię klubu zalicza się wiele
-                                            sukcesów na arenie wojewódzkiej oraz ogólnopolskiej. W
-                                            ostatnich latach seniorska drużyna Kasztelana Rozprza jest
-                                            coraz bliżej awansu do wyższej ligi rozgrywek. Mamy
-                                            nadzieje, że 10. rok działalności klubu przyniesie kolejne
-                                            sukcesy, które przyczynią się do ciągłego kreowania dobrej
-                                            marki zespołu na arenie wojewódzkiej, a także i całego kraju.</p>
+                                        <p>Ludowy Uczniowski Międzyszkolny Klub Sportowy Kasztelan Rozprza został założony 1 stycznia 2007 roku. Jego powstanie było odpowiedzią na stale rosnące zainteresowanie siatkówką halową w naszym regionie. Celem klubu jest aktywizacja młodych ludzi oraz dawanie im możliwości rozwijania swoich pasji.</p>
+                                        <p>Nasz zespół już od ponad dziesięciu lat z dumą reprezentuje gminę rozprza oraz region piotrkowski w rozgrywkach ligowych. Mądre zarządzanie klubem, praca z młodzieżą oraz wsparcie lokalnej społeczności przyczyniły się do znaczącego rozwoju naszego zespołu. Aktualnie Kasztelan Rozprza jest mocną i rozpoznawalną marką w regionie łódzkim. Nasi zawodnicy od wielu lat odnoszą liczne sukcesy na arenie wojewódzkiej i ogólnopolskiej. Największym z nich jest niewątpliwie awans do rozgrywek II ligi PZPS, który otwiera nowy ważny okres w działalności naszego klubu.</p>
+                                        <p>Przed naszym klubem stoi wiele wyzwań zarówno sportowych jak i organizacyjnych. Wierzymy jednak, że ciągła ciężka praca oraz wsparcie naszych partnerów przyniesie kolejny sezon pełen sukcesów. Jeśli chcesz poznać prawdziwe piękno siatkówki już dziś zapraszamy Ciebie na kolejne spotkanie Kasztelana. Przyjdź, kibicuj i stań się częścią naszej siatkarskiej rodziny! .</p>
                                     </div>
                                 </div>
                                 <div className="box">

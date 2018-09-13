@@ -1,0 +1,17 @@
+.uk-flex.uk-flex-middle
+  %h2.uk-margin-remove-bottom.uk-margin-large-right Partnerzy
+  = link_to 'Nowy sponsor', new_admin_sponsor_path, class: 'uk-button uk-button-primary'
+.uk-table-responsive
+  %table.uk-table.table.uk-table-striped.uk-table-divider
+    %thead
+      %tr
+        %th
+          Zdjęcie
+        %th
+          Tytuł
+        %th
+          Dodany
+        %th
+          Akcje
+    %tbody
+      =render @sponsors

@@ -77,12 +77,14 @@ class MediaTop extends React.Component {
     };
     submitDialog = () => {
         const {selected} = this.state
+        const { field_name } = this.props
         this.handleClose()
-        document.getElementById('post_image_id').value = selected.id
+        document.getElementById(field_name).value = selected.id
         document.getElementById('image_insert').src = selected.image.thumb.url
     }
     handleClear = () => {
-        document.getElementById('post_image_id').value = ''
+        const { field_name } = this.props
+        document.getElementById(field_name).value = ''
         document.getElementById('image_insert').src = ''
     }
 

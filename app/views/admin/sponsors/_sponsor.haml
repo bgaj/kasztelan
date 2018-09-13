@@ -1,0 +1,9 @@
+%tr
+  %td
+    %img{src: sponsor.image.image.small_thumb.url}
+  %td.title
+    = link_to sponsor.link, edit_admin_sponsor_path(sponsor)
+  %td.time
+    = l(sponsor.created_at, format: '%d %B %Y')
+  %td
+    =link_to "Usuń", admin_sponsor_path(sponsor), method: :delete

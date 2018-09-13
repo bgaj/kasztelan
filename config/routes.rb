@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   namespace :api do
     namespace :v1 do
+      resources :sponsors, path: 'partnerzy', only: [ :index]
       resources :posts, only: [:show, :index] do
         collection do
           get :home
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'posts#index', as: :root
+    resources :sponsors, except: [:show], path: 'partnerzy'
     resources :posts, except: [:show] do
       member do
         get :top_post

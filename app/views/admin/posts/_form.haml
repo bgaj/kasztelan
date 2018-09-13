@@ -18,7 +18,7 @@
       = f.association :image, as: :hidden
       .form-field
         %label Zdjęcie główne
-        = react_component("MediaTop")
+        = react_component("MediaTop", {field_name: 'post_image_id'})
         %img{src: @post.image ? @post.image.image.thumb.url : asset_path('placeholder1.jpg'), id: 'image_insert' }
 
   .uk-margin-top

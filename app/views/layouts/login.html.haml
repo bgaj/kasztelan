@@ -13,18 +13,8 @@
     %link{:href => "//fonts.googleapis.com/css?family=Roboto:400,700,300", :rel => "stylesheet", :type => "text/css"}/
     = stylesheet_link_tag 'admin'
     = javascript_include_tag 'admin'
-    = javascript_pack_tag 'application'
 
-  %body{class: 'animsition'}
-    .uk-grid.uk-grid-collapse
-      .uk-width-1-1.top
-        = link_to 'Wyloguj się', destroy_user_session_path, method: :delete, style: 'display:block; padding: 10px'
-      .uk-width-1-6.sidebar{style: 'min-height: 95vh'}
-        %ul.sidebar
-          %li
-            = link_to 'Wpisy', admin_posts_path
-          %li
-            = link_to 'Partnerzy', admin_sponsors_path
-      .uk-width-5-6
-        .main
-          = yield
+  %body
+    .uk-grid.uk-flex-center.uk-flex-middle
+      .uk-width-1-2
+        = yield

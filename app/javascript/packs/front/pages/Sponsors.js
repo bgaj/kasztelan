@@ -1,7 +1,8 @@
 import React from "react";
-import {Grid} from 'react-bootstrap';
-import Background from 'images/sponsors/green.jpg'
+import {Grid, Col, Row} from 'react-bootstrap';
+import {Helmet} from "react-helmet";
 import {connect} from "react-redux";
+
 
 class Sponsors extends React.Component {
 
@@ -9,18 +10,22 @@ class Sponsors extends React.Component {
         const { sponsors } = this.props
         return (
             <React.Fragment>
-                <div className="sponsors" style={{backgroundImage: `url(${Background})`}}>
+                <Helmet>
+                    <title>Kasztelan Rozprza</title>
+                    <meta name="description" content="Wszystkie najważniejsze informacje na temat klubu w jednym miejscu" />
+                </Helmet>
+                <div className='content club'>
+                    <h1>Sponsorzy</h1>
                     <Grid>
-                        <h3>Sponsorzy</h3>
-                        <div className='sponsors__container'>
+                        <div className='sponsors__container '>
                             {sponsors.map( sponsor => {
                                 return(
-                                    <div className='sponsors__box'>
+                                    <div className='sponsors__box sponsors__box--page'>
                                         <a target="_blank" href={sponsor.attributes.link} >
-                                            <img src={sponsor.attributes.image_small}/>
+                                            <img src={sponsor.attributes.image}/>
                                         </a>
                                     </div>
-                                    )
+                                )
                             })}
                         </div>
                     </Grid>

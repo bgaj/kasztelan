@@ -474,14 +474,35 @@ a{
       width: auto;
       max-height: 90px;
     }
+    &--page{
+      width: 33.33%;
+      height: 250px;
+      img{
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
     @media (max-width: 1200px) {
       width: 25%;
+      &--page{
+        width: 33.33%;
+      }
     }
     @media (max-width: 992px) {
       width: 33%;
+      &--page{
+        width: 50%;
+      }
     }
     @media (max-width: 767px) {
       width: 50%;
+      &--page{
+        width: 100%;
+        height: auto;
+        a{
+          padding: 20px 0;
+        }
+      }
     }
     @media (max-width: 480px) {
       width: 100%;
@@ -1000,5 +1021,25 @@ h1{
         background: $green;
       }
     }
+  }
+}
+
+.temp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+  min-height: 400px;
+  background: #1e2024;
+  color: white;
+  img{
+    max-width: 100px;
+  }
+  p{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 25px;
+    letter-spacing: -0.02em;
   }
 }

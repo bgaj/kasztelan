@@ -1,0 +1,12 @@
+= simple_form_for [:admin, @sponsor] do |f|
+  .uk-grid
+  .uk-width-4-4
+    .form-field
+      = f.input :link, label: 'Link', input_html: { id: ''}
+    .form-field
+      = f.association :image, as: :hidden
+      %label Zdjęcie główne
+      = react_component("MediaTop", {field_name: 'sponsor_image_id'})
+      %img{src: @sponsor.image ? @sponsor.image.image.thumb.url : asset_path('placeholder1.jpg'), id: 'image_insert' }
+    .uk-margin-top
+      = f.submit "Zapisz", class: 'uk-button uk-button-primary'

@@ -33,6 +33,9 @@ class Api {
     loadPrevMatch() {
         return this.api.get('prev_match');
     }
+    loadSponsors() {
+        return this.api.get('partnerzy');
+    }
     contactForm(params) {
         return this.api.post('contact_form', params)
     }

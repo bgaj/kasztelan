@@ -1,4 +1,4 @@
 class Admin::SessionsController < Devise::SessionsController
   include ApplicationHelper
-  layout 'admin'
+  layout 'login'
 end

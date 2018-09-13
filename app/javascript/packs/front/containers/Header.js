@@ -40,7 +40,7 @@ class Header extends React.Component {
                                                 <Link to='/aktualnosci'>Aktualności</Link>
                                             </li>
                                             <li>
-                                                <Link to='/aktualnosci'>Kadra</Link>
+                                                <Link to='/kadra'>Kadra</Link>
                                             </li>
                                             <li>
                                                 <Link to='/klub'>Klub</Link>
@@ -53,7 +53,7 @@ class Header extends React.Component {
                                                 <Link to='/terminarz'>Rozgrywki</Link>
                                             </li>
                                             <li>
-                                                <a>Sponsorzy</a>
+                                                <Link to='/sponsorzy'>Sponsorzy</Link>
                                             </li>
                                             <li>
                                                 <Link to='/kontakt'>Kontakt</Link>
@@ -92,7 +92,7 @@ class Header extends React.Component {
                                         <Link to='/aktualnosci'>Aktualności</Link>
                                     </li>
                                     <li>
-                                        <Link to='/aktualnosci'>Kadra</Link>
+                                        <Link to='/kadra'>Kadra</Link>
                                     </li>
                                     <li>
                                         <Link to='/klub'>Klub</Link>
@@ -101,7 +101,7 @@ class Header extends React.Component {
                                         <Link to='/terminarz'>Rozgrywki</Link>
                                     </li>
                                     <li>
-                                        <a>Sponsorzy</a>
+                                        <Link to='/sponsorzy'>Sponsorzy</Link>
                                     </li>
                                     <li>
                                         <Link to='/kontakt'>Kontakt</Link>
