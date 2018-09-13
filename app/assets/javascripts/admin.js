@@ -14,4 +14,22 @@
 //= require rails-ujs
 //= require turbolinks
 //= require tinymce
+//= require jquery
+//= require jquery-ui/widget
+//= require jquery-ui/widgets/sortable
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+
+    $("#sortable").sortable({
+        axis: "y",
+        update:function(e, ui) {
+            Rails.ajax({
+                url: $(this).data("url"),
+                type: "PATCH",
+                data: $(this).sortable('serialize'),
+            });
+        }
+    });
+
+});

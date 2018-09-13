@@ -21,7 +21,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'posts#index', as: :root
-    resources :sponsors, except: [:show], path: 'partnerzy'
+    resources :sponsors, except: [:show], path: 'partnerzy' do
+      collection do
+        patch :sort
+      end
+    end
     resources :posts, except: [:show] do
       member do
         get :top_post

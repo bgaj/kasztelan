@@ -6,6 +6,13 @@ class Admin::SponsorsController < Admin::AdminController
     @sponsors = Sponsor.all
   end
 
+  def sort
+    params[:sponsor].each_with_index do |id, index|
+      Sponsor.where(id: id).update_all(position: index + 1)
+    end
+    render json: :ok
+  end
+
   def new
     @sponsor = Sponsor.new
   end
@@ -31,7 +38,11 @@ class Admin::SponsorsController < Admin::AdminController
   end
 
   def destroy
-
+    if @sponsor.destroy
+      redirect_to admin_sponsors_path
+    else
+      flash[:error]="Coś poszło nie tak"
+    end
   end
 
   private
