@@ -13,7 +13,7 @@ class SerializablePost < JSONAPI::Serializable::Resource
   end
 
   attribute :image do
-   @object.image.image_url if @object.image
+   @object.image.image.large.url if @object.image
   end
 
   attribute :image_small do

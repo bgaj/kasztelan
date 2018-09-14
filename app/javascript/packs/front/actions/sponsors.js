@@ -29,7 +29,6 @@ export function loadSponsors() {
         dispatch(loadSponsorsRequest());
         return  api.loadSponsors()
             .then((res) => {
-                console.log(res.data)
                 dispatch(loadSponsorsSuccess(res.data));
             })
             .catch(error => {

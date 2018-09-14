@@ -20,7 +20,7 @@ class Sponsors extends React.Component {
                         <div className='sponsors__container '>
                             {sponsors.map( sponsor => {
                                 return(
-                                    <div className='sponsors__box sponsors__box--page'>
+                                    <div key={sponsor.id} className='sponsors__box sponsors__box--page'>
                                         <a target="_blank" href={sponsor.attributes.link} >
                                             <img src={sponsor.attributes.image}/>
                                         </a>

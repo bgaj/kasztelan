@@ -6,4 +6,5 @@
   %td.time
     = l(sponsor.created_at, format: '%d %B %Y')
   %td
+    =link_to "Edytuj", edit_admin_sponsor_path(sponsor)
     =link_to "Usuń", admin_sponsor_path(sponsor), method: :delete

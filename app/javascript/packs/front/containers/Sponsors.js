@@ -15,7 +15,7 @@ class Sponsors extends React.Component {
                         <div className='sponsors__container'>
                             {sponsors.map( sponsor => {
                                 return(
-                                    <div className='sponsors__box'>
+                                    <div key={sponsor.id} className='sponsors__box'>
                                         <a target="_blank" href={sponsor.attributes.link} >
                                             <img src={sponsor.attributes.image_small}/>
                                         </a>
