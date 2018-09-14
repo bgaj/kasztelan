@@ -11,7 +11,7 @@ class Sponsors extends React.Component {
             <React.Fragment>
                 <div className="sponsors" style={{backgroundImage: `url(${Background})`}}>
                     <Grid>
-                        <h3>Sponsorzy</h3>
+                        <h3>Partnerzy</h3>
                         <div className='sponsors__container'>
                             {sponsors.map( sponsor => {
                                 return(

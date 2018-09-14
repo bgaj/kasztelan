@@ -37,7 +37,7 @@ class App extends Component {
                                 <Route exact path='/klub' component={Club} />
                                 <Route exact path='/kontakt' component={Contact} />
                                 <Route exact path='/aktualnosci' component={News} />
-                                <Route exact path='/sponsorzy' component={Sponsors} />
+                                <Route exact path='/partnerzy' component={Sponsors} />
                                 <Route exact path='/kadra' component={Team} />
                                 <Route path='/aktualnosci/:slug' component={SingleNews} />
                             </Switch>

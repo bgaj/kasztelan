@@ -24,7 +24,7 @@ class Club extends React.Component {
                             <Col xs={12} sm={8}>
                                 <div className="box">
                                     <div className="box__title">
-                                        <h2 className="">LUMKS Kasztelan Rozprza</h2>
+                                        <h2 style={{fontWeight: 'bold'}}>LUMKS Kasztelan Rozprza</h2>
                                     </div>
                                     <div className="club__content">
                                         <img className="club__logo" src={Logo} />

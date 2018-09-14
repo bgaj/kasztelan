@@ -15,7 +15,7 @@ class Sponsors extends React.Component {
                     <meta name="description" content="Wszystkie najważniejsze informacje na temat klubu w jednym miejscu" />
                 </Helmet>
                 <div className='content club'>
-                    <h1>Sponsorzy</h1>
+                    <h1>Partnerzy</h1>
                     <Grid>
                         <div className='sponsors__container '>
                             {sponsors.map( sponsor => {

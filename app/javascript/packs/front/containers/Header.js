@@ -53,7 +53,7 @@ class Header extends React.Component {
                                                 <Link to='/terminarz'>Rozgrywki</Link>
                                             </li>
                                             <li>
-                                                <Link to='/sponsorzy'>Sponsorzy</Link>
+                                                <Link to='/partnerzy'>Partnerzy</Link>
                                             </li>
                                             <li>
                                                 <Link to='/kontakt'>Kontakt</Link>
@@ -101,7 +101,7 @@ class Header extends React.Component {
                                         <Link to='/terminarz'>Rozgrywki</Link>
                                     </li>
                                     <li>
-                                        <Link to='/sponsorzy'>Sponsorzy</Link>
+                                        <Link to='/partnerzy'>Partnerzy</Link>
                                     </li>
                                     <li>
                                         <Link to='/kontakt'>Kontakt</Link>
