@@ -52,7 +52,7 @@ class Home extends React.Component {
                                             const { image, slug, title } = post.attributes
                                             return(
                                                <div key={post.id} className="slider__element">
-                                                   <Link to={`aktualnosci/${slug}`}>
+                                                
                                                    <img src={img_url(image)} />
                                                    <div className='slider__overlay'>
                                                        <div className='slider__info'>
@@ -61,7 +61,7 @@ class Home extends React.Component {
                                                            <Link to={`aktualnosci/${slug}`}>Czytaj więcej</Link>
                                                        </div>
                                                    </div>
-                                                   </Link>
+                                               
                                                </div>
                                             )
                                         })}

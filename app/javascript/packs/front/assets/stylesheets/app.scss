@@ -38,6 +38,9 @@
 $black: #1e2024;
 $green: #61a545;
 $border: #e4e7ed;
+.slick-active{
+  z-index: 1000;
+}
 body{
   background: #edeff4;
   margin: 0;
