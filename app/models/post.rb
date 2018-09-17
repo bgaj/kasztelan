@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  is_impressionable
   paginates_per 5
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

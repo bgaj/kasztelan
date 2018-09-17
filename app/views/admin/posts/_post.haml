@@ -4,6 +4,8 @@
   %td.time
     = l(post.created_at, format: '%d %B %Y')
   %td
+    = post.impressionist_count
+  %td
     = post_status post
   %td
     =link_to "Usuń", admin_post_path(post), method: :delete
