@@ -1,0 +1,19 @@
+= simple_form_for [:admin, @player] do |f|
+  .uk-grid
+    .uk-width-3-4
+      .form-field
+        = f.input :name, label: 'Imię'
+      .form-field
+        = f.input :surname, label: 'Nazwisko'
+      .form-field
+        = f.input :number, label: 'Numer'
+      .form-field
+        = f.input :position, collection: Player.positions.collect{ |c| [c[0],c[0]]},  label: 'Pozycja'
+    .uk-width-1-4
+      = f.association :image, as: :hidden
+      .form-field
+        %label Zdjęcie główne
+        = react_component("MediaTop", {field_name: 'player_image_id'})
+        %img{src: @player.image ? @player.image.image.thumb.url : '', id: 'image_insert' }
+  .uk-margin-top
+    = f.submit "Zapisz", class: 'uk-button uk-button-primary'

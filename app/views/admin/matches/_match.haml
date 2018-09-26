@@ -1,0 +1,13 @@
+%tr
+  %td
+    = match.round
+  %td
+    = image_tag(url_for(match.home.image.image.small_thumb.url), style: 'max-width: 50px')
+    = match.home.name
+  %td
+    = image_tag(url_for(match.guest.image.image.small_thumb.url), style: 'max-width: 50px')
+    = match.guest.name
+  %td{id: "match_#{match.id}"}
+    = match.result
+  %td
+    =link_to 'Edytuj', edit_admin_match_path(match), remote: true

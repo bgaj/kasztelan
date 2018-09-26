@@ -36,6 +36,9 @@ class Api {
     loadSponsors() {
         return this.api.get('partnerzy');
     }
+    loadPlayers() {
+        return this.api.get('zawodnicy');
+    }
     contactForm(params) {
         return this.api.post('contact_form', params)
     }

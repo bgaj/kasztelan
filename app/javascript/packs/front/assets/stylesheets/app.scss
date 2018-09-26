@@ -1083,3 +1083,65 @@ h1{
     letter-spacing: -0.02em;
   }
 }
+
+.player{
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  img{
+    border-radius: 5px;
+  }
+  &:after{
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    bottom: 0;
+    content: '';
+    left: 0;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 1, 1, 0)), color-stop(87.57%, rgba(0, 0, 0, .72)));
+    background: linear-gradient(180deg, rgba(1, 1, 1, 0) 0%, rgba(0, 0, 0, .72) 87.57%);
+    height: 70%;
+  }
+  &__box{
+    position:  absolute;
+    bottom:  0;
+    z-index:  1;
+    display:  flex;
+    left:  0;
+    align-items:  center;
+    padding: 10px;
+  }
+  &__number{
+    display: inline-block;
+    font-size: 24px;
+    color: white;
+    background: #afb2b9;
+    font-weight:  bold;
+    padding: 5px 10px;
+    border-radius:  5px;
+  }
+  &__info{
+    display:  inline-block;
+    margin-left:  5px;
+    font-size: 15px;
+    color: white;
+    line-height:  14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    > span{
+      display: block;
+    }
+  }
+  &__surname{
+    color: $green;
+  }
+  &__position{
+    font-size:  10px;
+    font-weight:  normal;
+  }
+}
+.mobile-full{
+  @media(max-width: 480px) {
+    width: 100%;
+  }
+}

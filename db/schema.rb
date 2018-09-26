@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_17_193727) do
+ActiveRecord::Schema.define(version: 2018_09_25_115641) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -76,6 +76,18 @@ ActiveRecord::Schema.define(version: 2018_09_17_193727) do
     t.index ["guest_id"], name: "index_matches_on_guest_id"
     t.index ["home_id"], name: "index_matches_on_home_id"
     t.index ["match_type_id"], name: "index_matches_on_match_type_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.integer "number"
+    t.integer "image_id"
+    t.integer "order"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_players_on_image_id"
   end
 
   create_table "posts", force: :cascade do |t|

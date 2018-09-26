@@ -1,0 +1,21 @@
+.uk-flex.uk-flex-middle.uk-margin-bottom
+  %h2.uk-margin-remove-bottom.uk-margin-large-right Zawodnicy
+  = link_to 'Nowy zawodnik', new_admin_player_path, class: 'uk-button uk-button-primary'
+.uk-table-responsive
+  %table.uk-table.table.uk-table-striped.uk-table-divider
+    %thead
+      %tr
+        %th
+          Zdjęcie
+        %th
+          Imię
+        %th
+          Nazwisko
+        %th
+          Numer
+        %th
+          Pozycja
+        %th
+          Akcje
+    %tbody
+      =render @players

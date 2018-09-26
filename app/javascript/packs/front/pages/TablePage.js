@@ -63,14 +63,14 @@ class TablePage extends React.Component {
                     table[match.home].matches += 1
                     table[match.home].set_plus += match_data.home.set
                     table[match.home].set_minus += match_data.guest.set
-                    table[match.home].pionts_plus += match_data.home.small_points
-                    table[match.home].pionts_minus += match_data.guest.small_points
+                    table[match.home].points_plus += match_data.home.small_points
+                    table[match.home].points_minus += match_data.guest.small_points
                     table[match.guest].points += match_data.guest.points
                     table[match.guest].matches += 1
                     table[match.guest].set_plus += match_data.guest.set
                     table[match.guest].set_minus += match_data.home.set
-                    table[match.guest].pionts_plus += match_data.guest.small_points
-                    table[match.guest].pionts_minus += match_data.home.small_points
+                    table[match.guest].points_plus += match_data.guest.small_points
+                    table[match.guest].points_minus += match_data.home.small_points
                 }
             })
         })
@@ -85,6 +85,7 @@ class TablePage extends React.Component {
         const { data, table } = this.state
         if(!data) return null
         const teams = data.attributes.teams
+        console.log(table)
         return (
             <React.Fragment>
                 <Helmet>

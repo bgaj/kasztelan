@@ -1,0 +1,4 @@
+= simple_form_for [:admin, @match], remote: true do |f|
+  = f.input :result
+  .uk-margin-top
+    = f.submit "Zapisz", class: 'uk-button uk-button-primary'

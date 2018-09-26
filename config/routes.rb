@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :sponsors, path: 'partnerzy', only: [ :index]
+      resources :players, path: 'zawodnicy', only: [ :index]
       resources :posts, only: [:show, :index] do
         collection do
           get :home
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'posts#index', as: :root
+    resources :matches, expcept: [:new, :show, :destroy]
+    resources :players, expcept: [:show]
     resources :sponsors, except: [:show], path: 'partnerzy' do
       collection do
         patch :sort
