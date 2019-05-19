@@ -24,8 +24,8 @@ class Schedule extends React.Component {
         let guest = 0;
         let home = 0;
         result.split(',').map( set => {
-            const parts = set.split(':')
-            if(parts[0]>parts[1]){
+            const set_data = set.split(':')
+	    if(parseInt(set_data[0]) > parseInt(set_data[1])){
                 home +=1;
             }
             else{

@@ -79,7 +79,7 @@ class Media extends React.Component {
         const {selected, size} = this.state
         let url = size === 'url' ? selected.image[size] : selected.image[size].url
         this.handleClose()
-        tinyMCE.execCommand('mceInsertContent', !1, `<img src=${url}/>`)
+        tinyMCE.execCommand('mceInsertContent', !1, `<img src='${url}' />`)
     }
     handleSelect = (image) => {
         this.setState({selected: image})

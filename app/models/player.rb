@@ -1,8 +1,8 @@
 class Player < ApplicationRecord
   belongs_to :image
-  enum position: [ :setter, :middle, :opposite, :libero, :wing]
+  enum position: [ :setter, :middle, :opposite, :libero, :wing, :coach]
 
-  validates_presence_of :position, :number, :name, :surname
+  validates_presence_of :position, :name, :surname
 
   scope :number_order, -> { order(number: :asc)}
 
@@ -18,6 +18,8 @@ class Player < ApplicationRecord
         "Libero"
       when "wing"
         "Przyjmujący"
+      when "coach"
+	"Trener"
     end
   end
 end

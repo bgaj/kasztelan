@@ -2,6 +2,8 @@ default:
   menubar: false
   paste_merge_formats: true
   extended_valid_elements: 'span'
+  relative_urls : false
+  remove_script_host : false
   paste_retain_style_properties: all
   toolbar:
     - formatselect | fontselect | fontsizeselect | bold | italic | underline | strikethrough | alignleft | aligncenter | alignjustify | alignright

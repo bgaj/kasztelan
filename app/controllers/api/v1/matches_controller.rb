@@ -21,7 +21,7 @@ class Api::V1::MatchesController < ApplicationController
 
   def prev_match
     team = Team.my_team
-    prev_match = Match.team_matches(team).where.not(result: nil).order(match_date: :asc).first
+    prev_match = Match.team_matches(team).where.not(result: nil).last
     render jsonapi: prev_match
   end
 

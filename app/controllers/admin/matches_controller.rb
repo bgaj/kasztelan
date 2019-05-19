@@ -2,7 +2,7 @@ class Admin::MatchesController < Admin::AdminController
   before_action :set_match, only: [:edit, :update]
 
   def index
-    @matches = MatchType.first.matches.order(result: :desc, round: :asc)
+    @matches = MatchType.first.matches.order(round: :asc)
   end
 
 
