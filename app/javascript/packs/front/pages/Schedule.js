@@ -13,9 +13,26 @@ class Schedule extends React.Component {
     }
 
     componentDidMount(){
+        this.fetchSchedule()
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.getId(prevProps) !== this.getId(this.props)){
+            this.fetchSchedule(this.getId(this.props))
+        }
+    }
+
+    getId = (props) => {
+        return props.match.params.id
+    }
+
+    fetchSchedule = () => {
         let self = this
-        api.loadSchedule().then( resp => {
+        const id = this.getId(this.props)
+        api.loadSchedule(id).then( resp => {
             self.setState({matches: resp.data.data})
+        }).catch( error => {
+            self.props.history.push('/404')
         })
     }
 

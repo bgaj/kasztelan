@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_115641) do
+ActiveRecord::Schema.define(version: 2019_08_25_204902) do
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
+  create_table "friendly_id_slugs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "images", force: :cascade do |t|
+  create_table "images", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "impressions", force: :cascade do |t|
+  create_table "impressions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "impressionable_type"
     t.integer "impressionable_id"
     t.integer "user_id"
@@ -49,21 +49,23 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
     t.index ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
     t.index ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
-    t.index ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index"
+    t.index ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index", length: { params: 255 }
     t.index ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
     t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
-    t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
+    t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", length: { message: 255 }
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
-  create_table "match_types", force: :cascade do |t|
+  create_table "match_types", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name"
     t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "season_id"
+    t.index ["season_id"], name: "index_match_types_on_season_id"
   end
 
-  create_table "matches", force: :cascade do |t|
+  create_table "matches", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.date "match_date"
     t.time "match_time"
     t.string "result"
@@ -78,7 +80,7 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["match_type_id"], name: "index_matches_on_match_type_id"
   end
 
-  create_table "players", force: :cascade do |t|
+  create_table "players", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name"
     t.string "surname"
     t.integer "number"
@@ -87,10 +89,12 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "season_id"
     t.index ["image_id"], name: "index_players_on_image_id"
+    t.index ["season_id"], name: "index_players_on_season_id"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "slug"
     t.string "title"
     t.string "lead"
@@ -105,7 +109,26 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["image_id"], name: "index_posts_on_image_id"
   end
 
-  create_table "sponsors", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.float "price"
+    t.string "url"
+    t.integer "order"
+    t.bigint "leading_image_id"
+    t.bigint "second_image_id"
+    t.index ["leading_image_id"], name: "index_products_on_leading_image_id"
+    t.index ["second_image_id"], name: "index_products_on_second_image_id"
+  end
+
+  create_table "seasons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.string "allow_players"
+    t.string "allow_matches"
+  end
+
+  create_table "sponsors", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "link"
     t.integer "image_id"
     t.datetime "created_at", null: false
@@ -114,7 +137,7 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["image_id"], name: "index_sponsors_on_image_id"
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "teams", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name"
     t.integer "image_id"
     t.boolean "my_team", default: false
@@ -123,7 +146,7 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["image_id"], name: "index_teams_on_image_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -135,4 +158,6 @@ ActiveRecord::Schema.define(version: 2018_09_25_115641) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "teams", column: "guest_id"
+  add_foreign_key "matches", "teams", column: "home_id"
 end

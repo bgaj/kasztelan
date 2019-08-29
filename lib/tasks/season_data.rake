@@ -1,6 +1,15 @@
 namespace :season_data do
 
   desc 'create application task rates'
+  task :seasons => :environment do
+    old = Season.create! name: '2018/2019', slug: '2018-2019', allow_players: true, allow_matches: true
+    current = Season.create! name: '2019/2020', slug: '2019-2020', allow_players: false, allow_matches: true
+
+    MatchType.where(id: [1,2]).update_all(season_id: old.id)
+    MatchType.where.not(id: [1,2]).update_all(season_id: current.id)
+    Player.all.update_all(season_id: old.id)
+  end
+
   task :teams => :environment do
     teams=[
         {

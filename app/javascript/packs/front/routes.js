@@ -9,7 +9,9 @@ import SingleNews from "./pages/SingleNews";
 import Sponsors from "./pages/Sponsors";
 import Team from "./pages/Team";
 import Club from "./pages/Club";
+import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import {connect} from "react-redux";
 import { loadPrevMatch } from "./actions/prev_match";
 import { loadNextMatch } from './actions/next_match'
@@ -33,13 +35,15 @@ class App extends Component {
                             <Switch>
                                 <Route exact path='/' component={Home} />
                                 <Route exact path='/tabela' component={TablePage} />
-                                <Route exact path='/terminarz' component={Schedule} />
+                                <Route exact path='/terminarz/:id' component={Schedule} />
                                 <Route exact path='/klub' component={Club} />
                                 <Route exact path='/kontakt' component={Contact} />
                                 <Route exact path='/aktualnosci' component={News} />
                                 <Route exact path='/partnerzy' component={Sponsors} />
-                                <Route exact path='/kadra' component={Team} />
+                                <Route exact path='/kadra/:id' component={Team} />
+                                <Route exact path='/sklep' component={Shop} />
                                 <Route path='/aktualnosci/:slug' component={SingleNews} />
+                                <Route path='*' component={NotFound} />
                             </Switch>
                         </Layout>
                     </ScrollTop>

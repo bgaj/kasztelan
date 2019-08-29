@@ -10,9 +10,26 @@ class Team extends React.Component {
     }
 
     componentDidMount(){
+        this.fetchPlayers()
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.getId(prevProps) !== this.getId(this.props)){
+            this.fetchPlayers(this.getId(this.props))
+        }
+    }
+
+    getId = (props) => {
+        return props.match.params.id
+    }
+
+    fetchPlayers = () => {
         let self = this
-        api.loadPlayers().then( resp => {
+        const id = this.getId(this.props)
+        api.loadPlayers(id).then( resp => {
             self.setState({players: resp.data.data})
+        }).catch( error => {
+            self.props.history.push('/404')
         })
     }
 

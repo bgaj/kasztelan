@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
   namespace :api do
     namespace :v1 do
+      resources :products, path: 'products', only: [:index]
       resources :sponsors, path: 'partnerzy', only: [ :index]
-      resources :players, path: 'zawodnicy', only: [ :index]
+      resources :players, path: 'zawodnicy', only: [ :show]
       resources :posts, only: [:show, :index] do
         collection do
           get :home
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
       end
       post :contact_form, to: 'contact_form#create'
       get :current_season, to: 'matches#current_season'
-      get :schedule, to: 'matches#schedule'
+      get 'schedule/:id', to: 'matches#schedule'
       get :next_match, to: 'matches#next_match'
       get :prev_match, to: 'matches#prev_match'
     end

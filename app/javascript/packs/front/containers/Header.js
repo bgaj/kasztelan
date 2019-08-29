@@ -4,6 +4,7 @@ import {Grid, Col, Row, Glyphicon} from 'react-bootstrap';
 import Drawer from '@material-ui/core/Drawer';
 import Logo from 'images/logo/kasztelan9.png'
 import Responsive from 'react-responsive';
+import Dropdown from "../components/MyDropdown"
 
 const Desktop = props => <Responsive {...props} minWidth={992} />;
 const Mobile = props => <Responsive {...props} maxWidth={991} />;
@@ -14,7 +15,6 @@ class Header extends React.Component {
     }
 
     toggleDrawer = (open) => () => {
-        console.log(open)
         this.setState({
             drawer: open,
         });
@@ -40,7 +40,13 @@ class Header extends React.Component {
                                                 <Link to='/aktualnosci'>Aktualności</Link>
                                             </li>
                                             <li>
-                                                <Link to='/kadra'>Kadra</Link>
+                                                <Dropdown title="Kadra">
+                                                    <ul>
+                                                        <li>
+                                                            <Link to='/kadra/2018-2019'>Sezon 2018/2019</Link>
+                                                        </li>
+                                                    </ul>
+                                                </Dropdown>
                                             </li>
                                             <li>
                                                 <Link to='/klub'>Klub</Link>
@@ -50,7 +56,16 @@ class Header extends React.Component {
                                     <Col sm={6} className="header__skew header__skew--right">
                                         <ul className="header__list header__list--right">
                                             <li>
-                                                <Link to='/terminarz'>Rozgrywki</Link>
+                                                <Dropdown title="Rozgrywki">
+                                                    <ul>
+                                                        <li>
+                                                            <Link to='/terminarz/2018-2019'>Sezon 2018/2019</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to='/terminarz/2019-2020'>Sezon 2019/2020</Link>
+                                                        </li>
+                                                    </ul>
+                                                </Dropdown>
                                             </li>
                                             <li>
                                                 <Link to='/partnerzy'>Partnerzy</Link>
@@ -79,31 +94,44 @@ class Header extends React.Component {
                                 tabIndex={0}
                                 role="button"
                                 className="drawer"
-                                onClick={this.toggleDrawer(false)}
-                                onKeyDown={this.toggleDrawer(false)}
                             >
-                                <div className="drawer__top">
+                                <div onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)} className="drawer__top">
                                     <Link to='/'>
                                         <img src={Logo}/>
                                     </Link>
                                 </div>
                                 <ul>
-                                    <li>
+                                    <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
                                         <Link to='/aktualnosci'>Aktualności</Link>
                                     </li>
-                                    <li>
+                                    <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
                                         <Link to='/kadra'>Kadra</Link>
                                     </li>
                                     <li>
-                                        <Link to='/klub'>Klub</Link>
+                                        <Dropdown title="Kadra" mobile={true}>
+                                            <ul>
+                                                <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
+                                                    <Link to='/kadra/2018-2019'>Sezon 2018/2019</Link>
+                                                </li>
+                                            </ul>
+                                        </Dropdown>
                                     </li>
                                     <li>
-                                        <Link to='/terminarz'>Rozgrywki</Link>
+                                        <Dropdown title="Rozgrywki" mobile={true}>
+                                            <ul>
+                                                <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
+                                                    <Link to='/terminarz/2018-2019'>Sezon 2018/2019</Link>
+                                                </li>
+                                                <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
+                                                    <Link to='/terminarz/2019-2020'>Sezon 2019/2020</Link>
+                                                </li>
+                                            </ul>
+                                        </Dropdown>
                                     </li>
-                                    <li>
+                                    <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
                                         <Link to='/partnerzy'>Partnerzy</Link>
                                     </li>
-                                    <li>
+                                    <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
                                         <Link to='/kontakt'>Kontakt</Link>
                                     </li>
                                 </ul>

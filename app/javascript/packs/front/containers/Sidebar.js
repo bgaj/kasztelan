@@ -24,7 +24,7 @@ class Sidebar extends React.Component {
                                     </span>
                     </div>
                 </a>
-                <Link to='/terminarz' className='social social__green'>
+                <Link to='/terminarz/2019-2020' className='social social__green'>
                     <div className="social__icon social__icon--green"><img src={Ball}/></div>
                     <div className="social__text">
                         Sprawdź terminarz

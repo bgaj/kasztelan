@@ -10,7 +10,8 @@ class Api::V1::MatchesController < ApplicationController
 
   def schedule
     team = Team.my_team
-    render jsonapi: Match.team_matches(team).where('match_date > ?', '2019-08-08'.to_date).includes(:home, :guest)
+    season = find_season
+    render jsonapi: season.matches.team_matches(team).includes(:home, :guest)
   end
 
   def next_match
@@ -26,6 +27,10 @@ class Api::V1::MatchesController < ApplicationController
   end
 
   private
+
+  def find_season
+    Season.allowed_matches.find_by!(slug: params[:id])
+  end
 
   def set_match_type
     @match_type = MatchType.find_by(full_name: 'II Liga Mężczyzn 2019/2020')

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from '../store'
 
 class Api {
     constructor() {
@@ -24,8 +25,8 @@ class Api {
         return this.api.get(`current_season`);
     }
 
-    loadSchedule() {
-        return this.api.get('schedule');
+    loadSchedule(id) {
+        return this.api.get(`schedule/${id}`);
     }
     loadNextMatch() {
         return this.api.get('next_match');
@@ -36,11 +37,14 @@ class Api {
     loadSponsors() {
         return this.api.get('partnerzy');
     }
-    loadPlayers() {
-        return this.api.get('zawodnicy');
+    loadPlayers(id) {
+        return this.api.get(`zawodnicy/${id}`);
     }
     contactForm(params) {
         return this.api.post('contact_form', params)
+    }
+    loadProducts() {
+        return this.api.get('products')
     }
 }
 

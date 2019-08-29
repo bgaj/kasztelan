@@ -17,7 +17,7 @@ class Footer extends React.Component {
                                 <h4>Sprawdź</h4>
                                 <div className="footer__text">
                                     <Link to="/aktualnosci">Aktualności</Link><br/>
-                                    <Link to="/terminarz">Terminarz</Link><br/>
+                                    <Link to="/terminarz/2019-2020">Terminarz</Link><br/>
                                     <Link to="/tabela">Tabele</Link><br/>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@ class Footer extends React.Component {
                                 <div className="footer__text">
                                     <Link to='/klub'>Klub</Link><br/>
                                     <Link to='/partnerzy'>Partnerzy</Link><br/>
-                                    <Link to='/kadra'>Kadra</Link><br/>
+                                    <Link to='/kadra/2018-2019'>Kadra</Link><br/>
                                     <Link to='/kontakt'>Kontakt</Link>
                                 </div>
                             </div>
