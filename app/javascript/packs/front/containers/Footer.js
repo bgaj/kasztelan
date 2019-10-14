@@ -26,7 +26,7 @@ class Footer extends React.Component {
                                 <div className="footer__text">
                                     <Link to='/klub'>Klub</Link><br/>
                                     <Link to='/partnerzy'>Partnerzy</Link><br/>
-                                    <Link to='/kadra/2018-2019'>Kadra</Link><br/>
+                                    <Link to='/kadra/2019-2020'>Kadra</Link><br/>
                                     <Link to='/kontakt'>Kontakt</Link>
                                 </div>
                             </div>

@@ -45,6 +45,9 @@ class Header extends React.Component {
                                                         <li>
                                                             <Link to='/kadra/2018-2019'>Sezon 2018/2019</Link>
                                                         </li>
+                                                        <li>
+                                                            <Link to='/kadra/2019-2020'>Sezon 2019/2020</Link>
+                                                        </li>
                                                     </ul>
                                                 </Dropdown>
                                             </li>
@@ -112,6 +115,9 @@ class Header extends React.Component {
                                             <ul>
                                                 <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
                                                     <Link to='/kadra/2018-2019'>Sezon 2018/2019</Link>
+                                                </li>
+                                                <li onClick={this.toggleDrawer(false)} onKeyDown={this.toggleDrawer(false)}>
+                                                    <Link to='/kadra/2019-2020'>Sezon 2019/2020</Link>
                                                 </li>
                                             </ul>
                                         </Dropdown>
