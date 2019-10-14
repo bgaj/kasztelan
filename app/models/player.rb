@@ -4,7 +4,7 @@ class Player < ApplicationRecord
 
   validates_presence_of :position, :name, :surname
 
-  scope :number_order, -> { order(number: :asc)}
+  scope :number_order, -> { order('-number DESC')}
 
   def position_name
     case position

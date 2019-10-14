@@ -48,9 +48,9 @@ class Team extends React.Component {
                             <Col xs={12} sm={8}>
                                 <Row>
                                     {players.map( p => {
-                                        const { name, surname, number, position_name, image} = p.attributes
+                                        const { name, surname, number, position_name, image, grid} = p.attributes
                                         return(
-                                            <Col key={p.id} lg={4} xs={6} className='mobile-full'>
+                                            <Col key={p.id} lg={grid} xs={6} className='mobile-full'>
                                                 <div className="player">
                                                     <img src={image} />
                                                     <div className="player__box">

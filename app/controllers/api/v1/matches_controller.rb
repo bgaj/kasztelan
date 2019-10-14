@@ -16,13 +16,13 @@ class Api::V1::MatchesController < ApplicationController
 
   def next_match
     team = Team.my_team
-    next_match = Match.team_matches(team).where(result: nil).order(match_date: :asc).first
+    next_match = Match.team_matches(team).where(result: [nil, ""]).order(match_date: :asc).first
     render jsonapi: next_match
   end
 
   def prev_match
     team = Team.my_team
-    prev_match = Match.team_matches(team).where.not(result: nil).last
+    prev_match = Match.team_matches(team).where.not(result: [nil, ""]).last
     render jsonapi: prev_match
   end
 

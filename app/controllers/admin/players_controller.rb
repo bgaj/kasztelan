@@ -3,7 +3,7 @@ class Admin::PlayersController < Admin::AdminController
   before_action :set_player, only: [:edit, :update, :destroy,]
 
   def index
-    @players = Player.all
+     @players = Season.current_season.players
   end
 
   def new
@@ -15,6 +15,7 @@ class Admin::PlayersController < Admin::AdminController
 
   def create
     @player = Player.new(player_params)
+    @player.season = Season.current_season
     if @player.save
       redirect_to admin_players_path
     else

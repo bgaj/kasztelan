@@ -2,7 +2,7 @@ class Admin::MatchesController < Admin::AdminController
   before_action :set_match, only: [:edit, :update]
 
   def index
-    @matches = MatchType.first.matches.order(round: :asc)
+    @matches = MatchType.last.matches.order(round: :asc)
   end
 
 
@@ -21,7 +21,7 @@ class Admin::MatchesController < Admin::AdminController
   private
 
   def match_params
-    params.require(:match).permit(:result)
+    params.require(:match).permit(:result, :match_date)
   end
 
   def set_match

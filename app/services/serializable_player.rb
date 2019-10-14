@@ -10,4 +10,9 @@ class SerializablePlayer < JSONAPI::Serializable::Resource
   attribute :image_small do
     @object.image.image.thumb.url if @object.image
   end
+
+  attribute :grid do
+    return 6 @object.season_id == 2
+    4
+  end
 end
