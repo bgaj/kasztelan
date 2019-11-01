@@ -26,6 +26,7 @@ class Api::V1::PostsController < ApplicationController
       json_response({ message: 'not_found' }, :not_found) if @post.uuid != params[:uuid]
     else
       @post = Post.published.friendly.find(params[:id])
+      impressionist(@post)
     end
   end
 

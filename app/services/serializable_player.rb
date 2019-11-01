@@ -12,7 +12,10 @@ class SerializablePlayer < JSONAPI::Serializable::Resource
   end
 
   attribute :grid do
-    return 6 @object.season_id == 2
-    4
+    if @object.season_id == 2
+      6
+    else
+      4
+    end
   end
 end
