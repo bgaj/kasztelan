@@ -48,7 +48,7 @@ class Admin::SponsorsController < Admin::AdminController
   private
 
   def sponsor_params
-    params.require(:sponsor).permit(:image_id, :link)
+    params.require(:sponsor).permit(:image_id, :link, :main)
   end
 
   def set_image

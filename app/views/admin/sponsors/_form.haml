@@ -4,6 +4,8 @@
     .form-field
       = f.input :link, label: 'Link', input_html: { id: ''}
     .form-field
+      = f.input :main, label: 'Strategiczny'
+    .form-field
       = f.association :image, as: :hidden
       %label Zdjęcie główne
       = react_component("MediaTop", {field_name: 'sponsor_image_id'})

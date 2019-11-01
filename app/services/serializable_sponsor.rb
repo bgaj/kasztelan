@@ -1,7 +1,7 @@
 class SerializableSponsor < JSONAPI::Serializable::Resource
 
   type 'sponsors'
-  attributes :link
+  attributes :link, :main
 
   attribute :image do
    @object.image.image.large.url if @object.image

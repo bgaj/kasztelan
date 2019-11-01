@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_25_204902) do
+ActiveRecord::Schema.define(version: 2019_11_01_203200) do
 
   create_table "friendly_id_slugs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "slug", null: false
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 2019_08_25_204902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+    t.boolean "main", default: false
     t.index ["image_id"], name: "index_sponsors_on_image_id"
   end
 
