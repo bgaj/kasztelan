@@ -1,0 +1,19 @@
+.uk-flex.uk-flex-middle
+  %h2.uk-margin-remove-bottom.uk-margin-large-right Produkty
+  = link_to 'Nowy produkt', new_admin_product_path, class: 'uk-button uk-button-primary'
+= paginate @products
+.uk-table-responsive
+  %table.uk-table.table.uk-table-striped.uk-table-divider
+    %thead
+      %tr
+        %th
+          Nazwa
+        %th
+          Cena
+        %th
+          Zdjęcie
+        %th
+          Akcje
+    %tbody
+      =render @products
+= paginate @products

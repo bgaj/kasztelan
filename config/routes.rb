@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'posts#index', as: :root
     resources :matches, expcept: [:new, :show, :destroy]
+    resources :products
     resources :players, expcept: [:show]
     resources :sponsors, except: [:show], path: 'partnerzy' do
       collection do

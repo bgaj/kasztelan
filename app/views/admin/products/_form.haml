@@ -1,0 +1,21 @@
+= simple_form_for [:admin, @product] do |f|
+  .uk-grid
+    .uk-width-3-4
+      .form-field
+        = f.input :name, label: 'Nazwa'
+      .form-field
+        = f.input :description, label: 'Opis'
+      .form-field
+        = f.input :url, label: 'Adres Vertis'
+      .form-field
+        = f.input :price, label: 'Cena'
+    .uk-width-1-4
+      = f.association :leading_image, as: :hidden
+      .form-field
+        %label Zdjęcie produktu
+        = react_component("MediaTop", {field_name: 'product_leading_image_id'})
+        - if @product.leading_image
+          %img{src: @product.leading_image.image.thumb.url}
+
+  .uk-margin-top
+    = f.submit "Zapisz", class: 'uk-button uk-button-primary'
